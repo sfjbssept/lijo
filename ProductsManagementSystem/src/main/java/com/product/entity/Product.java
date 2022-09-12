@@ -20,6 +20,7 @@ import lombok.Setter;
 public class Product {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	@JsonIgnore
 	private Integer id;
 	private String productName;
 	private String productBrand;
