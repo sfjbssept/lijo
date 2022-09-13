@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.product.entity.Product;
+import com.product.exception.ResourceNotFoundException;
 import com.product.repo.IProductRepository;
 
 
@@ -35,6 +36,25 @@ public class ProductServiceImpl implements IProductService {
 	@Override
 	public List<Product> getAllProducts() {
 		return productRepository.findAll();
+	}
+
+	public Product updateProduct(Product product, Integer id) {
+		Product exProduct = productRepository.findById(id).orElseThrow(()->
+		new ResourceNotFoundException("id","Product",id));
+		product.setId(exProduct.getId());
+		return productRepository.save(product);
+	}
+
+	public void deleteProduct(Integer id) {
+		productRepository.findById(id).orElseThrow(()->
+		new ResourceNotFoundException("id","Product",id));
+		productRepository.deleteById(id);
+		
+	}
+
+	public void deleteAllProduct() {
+		productRepository.deleteAll();
+		
 	}
 
 }
