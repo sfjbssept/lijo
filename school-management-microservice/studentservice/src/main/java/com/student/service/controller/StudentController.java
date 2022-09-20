@@ -1,4 +1,4 @@
-package com.stud.service.controller;
+package com.student.service.controller;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.stud.service.entity.Student;
+import com.student.entity.Student;
 
 @RestController
 @RequestMapping("/getstudent")
