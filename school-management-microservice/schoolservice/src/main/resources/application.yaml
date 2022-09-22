@@ -1,5 +1,5 @@
 student:
-  URL: http://STUDENT-SERVICE/getstudent/school/
+  URL: http://STUDENT-SERVICE/student/
 server:
   port: 9092
 spring:
@@ -14,3 +14,22 @@ eureka:
 logging:
   level:
     '[com.school.app]': debug
+
+    
+ #actuator
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,env,beans
+  info:
+    env:
+      enabled: true
+
+info:
+  application:
+    name: ${spring.application.name}
+    description: Very cool Spring Boot application
+    version: '@project.version@'
+    spring-cloud-version: '@spring-cloud.version@'
+    spring-boot-version: '@project.parent.version@'

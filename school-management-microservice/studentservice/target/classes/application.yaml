@@ -9,3 +9,22 @@ eureka:
       defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
     healthcheck:
       enabled: true
+      
+      
+ #actuator
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,env,beans
+  info:
+    env:
+      enabled: true
+
+info:
+  application:
+    name: ${spring.application.name}
+    description: Very cool Spring Boot application
+    version: '0.0.1-SNAPSHOT'
+    spring-cloud-version: '2021.0.4'
+    spring-boot-version: '2.7.3'

@@ -1,0 +1,51 @@
+spring:
+  application:
+    name: api-gateway-service
+    
+  # gateway configurations
+  cloud:
+    gateway:
+      routes:
+        # Student Service
+        - id: STUDENT-SERVICE
+          uri:
+            lb://STUDENT-SERVICE
+          predicates:
+          - Path=/student-service/**
+          filters:
+          - StripPrefix=1
+        # Scool service
+        - id: SCHOOL-SERVICE
+          uri: lb://SCHOOL-SERVICE
+          predicates:
+          - Path=/school-service/**
+          filters:
+          - StripPrefix=1
+         
+    
+server:
+  port: 8090
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+      
+#actuator
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,env,beans
+  info:
+    env:
+      enabled: true
+
+info:
+  application:
+    name: ${spring.application.name}
+    description: Very cool Spring Boot application
+    version: '@project.version@'
+    spring-cloud-version: '@spring-cloud.version@'
+    spring-boot-version: '@project.parent.version@'
+  

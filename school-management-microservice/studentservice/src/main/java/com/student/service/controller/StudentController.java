@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.student.entity.Student;
 
 @RestController
-@RequestMapping("/getstudent")
+@RequestMapping("/student")
 public class StudentController {
 	
 	private static Map<String,List<Student>>  schoolDB= new HashMap<String,List<Student>>();
@@ -32,7 +32,7 @@ public class StudentController {
 		
 	}
 	
-	 @GetMapping("/school/{schoolname}") 
+	 @GetMapping("/{schoolname}") 
 	 List<Student> getStudent(@PathVariable String schoolname){
 		 List<Student> stulist= schoolDB.get(schoolname);
 		if(stulist== null) {
