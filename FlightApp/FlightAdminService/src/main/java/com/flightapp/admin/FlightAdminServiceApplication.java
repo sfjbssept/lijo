@@ -1,13 +1,13 @@
-package com.secure;
+package com.flightapp.admin;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Application {
+public class FlightAdminServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(Application.class, args);
+		SpringApplication.run(FlightAdminServiceApplication.class, args);
 	}
 
 }

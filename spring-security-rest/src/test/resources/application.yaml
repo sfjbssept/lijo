@@ -1,0 +1,29 @@
+
+security:
+  basic:
+    enabled: true
+  ignored: /**
+  
+management:
+  security:
+    enabled: true
+
+
+emp:
+  get:
+    url: /get
+  post:
+    url: /post
+  put:
+    url: /put/{name}
+  delete:
+    url: /delete/{name}
+    
+user:
+  user1:
+    username: user
+    password: password
+  user2:
+    username: admin
+    password: password
+    

@@ -21,7 +21,7 @@ public class AppController {
 
 	@GetMapping("/get")
 	public String getDetails() {
-		return "Get Employees";
+		return "Get Employee";
 	}
 
 	@PostMapping("/post")
