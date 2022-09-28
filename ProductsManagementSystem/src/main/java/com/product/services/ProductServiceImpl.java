@@ -47,7 +47,7 @@ public class ProductServiceImpl implements IProductService {
 
 	public void deleteProduct(Integer id) {
 		productRepository.findById(id).orElseThrow(()->
-		new ResourceNotFoundException("id","Product",id));
+		new ResourceNotFoundException("id","Prodduct",id));
 		productRepository.deleteById(id);
 		
 	}
