@@ -28,7 +28,7 @@ public class AdminController {
 	AdminService adminService;
 
 	// add airline
-	@PostMapping(value = "airline")
+	@PostMapping(value = "airline/register")
 	public ResponseEntity<AirlineRequestDto> addAirline(@RequestBody AirlineRequestDto airLine) {
 		adminService.SaveAirline(airLine);
 		return new ResponseEntity<>(airLine, HttpStatus.OK);

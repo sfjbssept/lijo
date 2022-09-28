@@ -13,11 +13,18 @@ spring:
           - Path=/flight-admin-service/**
           filters:
           - StripPrefix=1
-        # Scool service
-        - id: SCHOOL-SERVICE
-          uri: lb://SCHOOL-SERVICE
+        # Flight user  service
+        - id: FLIGHT-USER-SERVICE
+          uri: lb://FLIGHT-USER-SERVICE
           predicates:
-          - Path=/school-service/**
+          - Path=/flight-user-service/**
+          filters:
+          - StripPrefix=1
+         # Flight booking  service
+        - id: FLIGHT-BOOKING-SERVICE
+          uri: lb://FLIGHT-BOOKING-SERVICE
+          predicates:
+          - Path=/flight-booking-service/**
           filters:
           - StripPrefix=1
          

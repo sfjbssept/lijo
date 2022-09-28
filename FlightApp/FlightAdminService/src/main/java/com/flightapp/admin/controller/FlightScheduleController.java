@@ -27,7 +27,7 @@ public class FlightScheduleController {
 	@Autowired
 	FlightScheduleService flightScheduleService;
 	
-	@PostMapping
+	@PostMapping(value = "add")
 	public Integer addNewSchedule(@RequestBody FlightScheduleDto flightScheduleDto) {
 		
 		logger.info("addNewSchedule Started");
