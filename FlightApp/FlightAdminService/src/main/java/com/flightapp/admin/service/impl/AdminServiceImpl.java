@@ -2,6 +2,7 @@ package com.flightapp.admin.service.impl;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -79,10 +80,6 @@ public class AdminServiceImpl implements AdminService {
 		
 	}
 
-	@Override
-	public Optional<Flight> getFlight(Integer id) {
-		return flightRepo.findById(id);
-	}
 
 	@Override
 	public void updateFlight(FlightDto flightDto, Integer id) {
@@ -100,6 +97,20 @@ public class AdminServiceImpl implements AdminService {
 		}));
 		return airline;
 		
+	}
+
+	@Override
+	public List<Flight> getFlightByAirlineId(Integer airlineId) {
+		Airline airline = getAirline(airlineId);
+		return (List<Flight>) airline.getFlightList();
+		
+	}
+
+
+	@Override
+	public Flight getFlight(Integer id) {
+		return flightRepo.findById(id).orElseThrow(()->
+		new ResourceNotFoundException("id","Flight",id));
 	}
 
 }

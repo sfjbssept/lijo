@@ -23,10 +23,13 @@ public interface AdminService {
 
 	void deleteFlight(Integer id);
 
-	Optional<Flight> getFlight(Integer id);
+	Flight getFlight(Integer id);
 
 	void updateFlight(FlightDto flightDto, Integer id);
 
 	Airline getAirline(Integer id);
+
+
+	List<Flight> getFlightByAirlineId(Integer airlineId);
 
 }

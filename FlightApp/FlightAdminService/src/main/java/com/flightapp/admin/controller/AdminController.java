@@ -86,8 +86,8 @@ public class AdminController {
 	// get flight
 
 	@GetMapping(value = "flight/{id}")
-	public Airline getFlight(@PathVariable Integer id) {
-		return adminService.getAirline(id);
+	public Flight getFlight(@PathVariable Integer id) {
+		return adminService.getFlight(id);
 
 	}
 
