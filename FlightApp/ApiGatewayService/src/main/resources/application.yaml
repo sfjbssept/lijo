@@ -20,6 +20,13 @@ spring:
           - Path=/flight-user-service/**
           filters:
           - StripPrefix=1
+        # Flight search  service
+        - id: FLIGHT-SEARCH-SERVICE
+          uri: lb://FLIGHT-SEARCH-SERVICE
+          predicates:
+          - Path=/flight-search-service/**
+          filters:
+          - StripPrefix=1
          # Flight booking  service
         - id: FLIGHT-BOOKING-SERVICE
           uri: lb://FLIGHT-BOOKING-SERVICE
@@ -27,6 +34,17 @@ spring:
           - Path=/flight-booking-service/**
           filters:
           - StripPrefix=1
+      #You can configure the gateway to control CORS behavior. The “global” CORS configuration is a map of URL patterns to Spring Framework CorsConfiguration.
+      #https://docs.spring.io/spring-cloud-gateway/docs/current/reference/html/#cors-configuration
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "http://localhost:4200"
+            allowedHeaders: '*'
+            allowedMethods:
+              - GET
+              - POST
+              - OPTIONS
          
     
 server:

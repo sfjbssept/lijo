@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FlightService } from '../flight.service';
 
 @Component({
   selector: 'app-flight-search',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FlightSearchComponent implements OnInit {
 
-  constructor() { }
+  constructor(public flightService : FlightService ) { }
 
   ngOnInit(): void {
-  }
+    this.flightService.searchFlight().subscribe({
+      error: (e) => { console.log("error"+e)},    // errorHandler 
+      next: (d) => { console.log(d)},     // nextHandler
+    });
 
+}
 }
