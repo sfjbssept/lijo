@@ -13,6 +13,6 @@ export class FlightService {
     const headers = new Headers();
     headers.append('Access-Control-Allow-Origin', '*');
 
-    return this.http.get(+ "search?from=3&to=3" ,{headers: new HttpHeaders().set('Access-Control-Allow-Origin', '*'), responseType: 'json'})
+    return this.http.get(this.rootURL+ "search?from=3&to=3" ,{headers: new HttpHeaders().set('Access-Control-Allow-Origin', '*'), responseType: 'json'})
     }
 }

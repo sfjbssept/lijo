@@ -11,5 +11,25 @@
                 <button type="submit" class="btn btn-primary">Search Flights</button>
               </div>
           </div>
+          <ul>
+            <li *ngFor="let item of flightSchedules">
+              {{item.sourceLocation}}
+            </li>
+          </ul>
+    </div>
+</div>
+<div class="card">
+  <div class="card-body">
+    <div class="row row-cols-1" style="background-color: red;">
+      <div class="col">Air Asia</div>
+    </div>
+    <div class="row">
+      <div class="col-2">
+        <span>GOI Goa ,India</span>
+      </div>
+      <div class="col-4"></div>
+      <div class="col-2">BLR Bengaluru, India</div>
+      <div class="col-4"></div>
+        
     </div>
 </div>
