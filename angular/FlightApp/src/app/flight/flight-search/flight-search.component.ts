@@ -13,7 +13,7 @@ export class FlightSearchComponent implements OnInit {
   constructor(public flightService : FlightService ) { }
 
   ngOnInit(): void {
-    this.flightService.searchFlight().subscribe({
+    this.flightService.searchFlight('from','to').subscribe({
       error: (e) => { console.log("error"+e)},    // errorHandler 
       next: (d) => { 
         this.flightSchedules =d as FlightSchedule[];
@@ -22,4 +22,9 @@ export class FlightSearchComponent implements OnInit {
     });
 
 }
+calculateDuration(flightSchedule:FlightSchedule){
+      return new Date(flightSchedule.departureTime).getTime()- new Date(flightSchedule.arrivalTime).getTime();
+  }
+  
 }
+

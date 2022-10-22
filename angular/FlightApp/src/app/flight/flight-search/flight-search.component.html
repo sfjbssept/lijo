@@ -11,25 +11,37 @@
                 <button type="submit" class="btn btn-primary">Search Flights</button>
               </div>
           </div>
-          <ul>
-            <li *ngFor="let item of flightSchedules">
-              {{item.sourceLocation}}
-            </li>
-          </ul>
     </div>
 </div>
-<div class="card">
-  <div class="card-body">
-    <div class="row row-cols-1" style="background-color: red;">
+<div class="card flight-schedule" *ngFor="let item of flightSchedules">
+  <div class="card-body"  >
+    <div class="row row-cols-1">
       <div class="col">Air Asia</div>
     </div>
     <div class="row">
       <div class="col-2">
-        <span>GOI Goa ,India</span>
+        <span>{{item.sourceLocation}}</span>
       </div>
-      <div class="col-4"></div>
-      <div class="col-2">BLR Bengaluru, India</div>
-      <div class="col-4"></div>
+      <div class="col-2"></div>
+      <div class="col-2">{{item.destination}}</div>
+      <div class="col-6"></div>
         
+    </div>
+    <div class="row">
+      <div class="col-2">
+       <span class="flight-time">{{item.departureTime | date:"HH:mm"}}</span> 
+      </div>
+      <div class="col-2">
+        {{calculateDuration(item) | date:"HH:mm"}}
+      </div>
+      <div class="col-4">
+       <span  class="flight-time">{{item.arrivalTime | date:"HH:mm"}}</span> 
+      </div>
+      <div class="col-2">
+       <span class="flight-price">{{ 3222 | currency:'INR': 'symbol':'1.0-0'}}</span> 
+      </div>
+      <div class="col-2">
+        <button class="flight-btn"><span class="flight-book">Book</span></button>
+      </div>
     </div>
 </div>

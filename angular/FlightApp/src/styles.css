@@ -2,3 +2,7 @@
 body{
     background-color: #ebcd34;
 }
+@font-face {
+    font-family: 'Quicksand_Dash';
+    src: url('/assets/fonts/Quicksand_Dash.ttf');
+ }
