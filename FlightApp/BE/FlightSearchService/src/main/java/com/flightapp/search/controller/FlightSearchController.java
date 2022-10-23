@@ -22,7 +22,7 @@ public class FlightSearchController {
 	FlightSerchService flightSerchService;
 	@GetMapping()
 	public ResponseEntity<List<FlightScheduleDto>> searchFlights(@RequestParam String from ,@RequestParam String to){
-		List<FlightScheduleDto> list = flightSerchService.searchFlight();
+		List<FlightScheduleDto> list = flightSerchService.searchFlight(from,to);
 		return new ResponseEntity<List<FlightScheduleDto>>(list, HttpStatus.OK);
 		
 	}

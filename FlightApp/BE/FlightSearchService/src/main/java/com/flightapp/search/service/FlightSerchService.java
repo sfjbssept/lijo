@@ -6,5 +6,7 @@ import com.flightapp.search.dto.FlightScheduleDto;
 
 public interface FlightSerchService {
 
-	public List<FlightScheduleDto> searchFlight();
+	public List<FlightScheduleDto> searchFlight(String from, String to);
+
+	List<FlightScheduleDto> searchFlight();
 }

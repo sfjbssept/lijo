@@ -10,10 +10,19 @@ import { FlightSchedule } from '../flightSchedule';
 export class FlightSearchComponent implements OnInit {
 
   flightSchedules!: FlightSchedule[];
+  source: any ='GOA';
+  destination: any = 'LONDON' ;
   constructor(public flightService : FlightService ) { }
 
   ngOnInit(): void {
-    this.flightService.searchFlight('from','to').subscribe({
+   
+}
+calculateDuration(flightSchedule:FlightSchedule){
+     // let hours = (new Date(flightSchedule.departureTime).getTime()- new Date(flightSchedule.arrivalTime).getTime());
+      return new Date(flightSchedule.departureTime).getTime()- new Date(flightSchedule.arrivalTime).getTime();
+  }
+  searchFlights(){
+    this.flightService.searchFlight(this.source,this.destination).subscribe({
       error: (e) => { console.log("error"+e)},    // errorHandler 
       next: (d) => { 
         this.flightSchedules =d as FlightSchedule[];
@@ -21,10 +30,6 @@ export class FlightSearchComponent implements OnInit {
       },     // nextHandler
     });
 
-}
-calculateDuration(flightSchedule:FlightSchedule){
-      return new Date(flightSchedule.departureTime).getTime()- new Date(flightSchedule.arrivalTime).getTime();
   }
-  
 }
 

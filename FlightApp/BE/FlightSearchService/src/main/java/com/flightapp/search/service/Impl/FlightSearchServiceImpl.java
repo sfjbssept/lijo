@@ -27,5 +27,12 @@ public class FlightSearchServiceImpl implements FlightSerchService {
 		return mapper.map(flightSchedule, new TypeToken<List<FlightScheduleDto>>() {}.getType());
 	}
 
+	@Override
+	public List<FlightScheduleDto> searchFlight(String from, String to) {
+        List<FlightSchedule> flightSchedule =  flightScheduleRep.searchFlightSchedule(from,to);
+		
+		return mapper.map(flightSchedule, new TypeToken<List<FlightScheduleDto>>() {}.getType());
+	}
+
 
 }

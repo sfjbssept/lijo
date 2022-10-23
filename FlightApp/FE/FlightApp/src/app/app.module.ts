@@ -7,7 +7,12 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FlightSearchComponent } from './flight/flight-search/flight-search.component';
 import { FlightComponent } from './flight/flight.component';
 import { HttpClientModule } from '@angular/common/http';
-
+import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatNativeDateModule} from '@angular/material/core';
+import {MatIconModule} from '@angular/material/icon';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/compiler';
+import { AngularMaterialModule } from './AngularMaterialModule';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,10 +22,16 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatNativeDateModule,
+    BrowserAnimationsModule,
+    AngularMaterialModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  //schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }
