@@ -1,20 +1,20 @@
 <div class="card">
     <div class="card-body">
         <div class="row">
-            <div class="col">
+            <div class="col pd-top-2">
               <input type="text" class="form-control"  [(ngModel)]="source" placeholder="From" aria-label="Enter city or Airport">
             </div>
-            <div class="col">
+            <div class="col pd-top-2">
               <input type="text" class="form-control"  [(ngModel)]="destination" placeholder="TO" aria-label="Enter city or Airport">
             </div>
             <div class="col datepick" >
-              <!-- <mat-form-field>
-              <input type="text" matInput class="form-control" [matDatepicker]="picker" aria-label="Departure Date"> 
+              <mat-form-field>
+              <input type="text" matInput  [matDatepicker]="picker" [formControl]="depDate1" aria-label="Departure Date"> 
                 <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                <mat-datepicker #picker></mat-datepicker>
-              </mat-form-field> -->
+                <mat-datepicker #picker   ></mat-datepicker>
+              </mat-form-field>
             </div>
-            <div class="col">
+            <div class="col pd-top-2">
                 <button type="submit" (click)="searchFlights()" class="btn btn-primary">Search Flights</button>
               </div>
           </div>
@@ -50,7 +50,7 @@
        <span  class="flight-time">{{item.arrivalTime | date:"HH:mm"}}</span> 
       </div>
       <div class="col-2">
-       <span class="flight-price">{{ 3222 | currency:'INR': 'symbol':'1.0-0'}}</span> 
+       <span class="flight-price">{{ item.economyClassCost | currency:'INR': 'symbol':'1.0-0'}}</span> 
       </div>
       <div class="col-2">
         <button class="flight-btn"><span class="flight-book">Book</span></button>

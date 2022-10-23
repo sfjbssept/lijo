@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import * as moment from 'moment';
 import { FlightService } from '../flight.service';
 import { FlightSchedule } from '../flightSchedule';
+import { formatDate } from "@angular/common";
 
 @Component({
   selector: 'app-flight-search',
@@ -12,17 +15,21 @@ export class FlightSearchComponent implements OnInit {
   flightSchedules!: FlightSchedule[];
   source: any ='GOA';
   destination: any = 'LONDON' ;
+  depDate: any = moment().format("MM/DD/yyyy");
+  depDate1 = new FormControl((new Date()).toISOString());
   constructor(public flightService : FlightService ) { }
 
   ngOnInit(): void {
-   
+   console.log(this.depDate);
 }
 calculateDuration(flightSchedule:FlightSchedule){
      // let hours = (new Date(flightSchedule.departureTime).getTime()- new Date(flightSchedule.arrivalTime).getTime());
       return new Date(flightSchedule.departureTime).getTime()- new Date(flightSchedule.arrivalTime).getTime();
   }
   searchFlights(){
-    this.flightService.searchFlight(this.source,this.destination).subscribe({
+    console.log(this.depDate);
+    console.log(this.depDate1.value);
+    this.flightService.searchFlight(this.source,this.destination, formatDate(this.depDate1.value, 'yyyy-MM-dd', 'en-US')).subscribe({
       error: (e) => { console.log("error"+e)},    // errorHandler 
       next: (d) => { 
         this.flightSchedules =d as FlightSchedule[];

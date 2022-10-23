@@ -1,5 +1,10 @@
 package com.flightapp.search.service.Impl;
 
+import java.sql.Timestamp;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import org.modelmapper.ModelMapper;
@@ -20,16 +25,25 @@ public class FlightSearchServiceImpl implements FlightSerchService {
 	
 	ModelMapper mapper = new  ModelMapper();  
 	
-	@Override
 	public List<FlightScheduleDto> searchFlight() {
 		List<FlightSchedule> flightSchedule =  flightScheduleRep.findAll();
 		
 		return mapper.map(flightSchedule, new TypeToken<List<FlightScheduleDto>>() {}.getType());
 	}
 
+
 	@Override
-	public List<FlightScheduleDto> searchFlight(String from, String to) {
-        List<FlightSchedule> flightSchedule =  flightScheduleRep.searchFlightSchedule(from,to);
+	public List<FlightScheduleDto> searchFlight(String from, String to, String departureDate) {
+		Timestamp timestamp = null;
+		DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+		try {
+			 Date date =formatter.parse(departureDate);
+			 timestamp =  new Timestamp(date.getTime());
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+     List<FlightSchedule> flightSchedule =  flightScheduleRep.searchFlightSchedule(from.toUpperCase(),to.toUpperCase(),timestamp);
 		
 		return mapper.map(flightSchedule, new TypeToken<List<FlightScheduleDto>>() {}.getType());
 	}

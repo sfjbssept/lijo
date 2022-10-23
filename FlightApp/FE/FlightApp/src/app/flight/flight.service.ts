@@ -9,12 +9,12 @@ export class FlightService {
   constructor(private http: HttpClient) { }
   rootURL = 'http://localhost:8090/flight-search-service/';
   
-  public searchFlight(from: any,to: any) {
+  public searchFlight(from: any,to: any, depDate: any) {
     const headers = new Headers();
     headers.append('Access-Control-Allow-Origin', '*');
 
     return this.http.get(this.rootURL+ "search" ,{ 
-      params: new HttpParams().set('from',from).set('to',to),
+      params: new HttpParams().set('from',from).set('to',to).set('depDate',depDate),
       headers: new HttpHeaders().set('Access-Control-Allow-Origin', '*'), responseType: 'json'})
     }
 }

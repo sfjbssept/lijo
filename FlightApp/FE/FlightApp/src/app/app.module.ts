@@ -7,7 +7,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FlightSearchComponent } from './flight/flight-search/flight-search.component';
 import { FlightComponent } from './flight/flight.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatNativeDateModule} from '@angular/material/core';
 import {MatIconModule} from '@angular/material/icon';
@@ -28,7 +28,8 @@ import { AngularMaterialModule } from './AngularMaterialModule';
     BrowserAnimationsModule,
     MatNativeDateModule,
     BrowserAnimationsModule,
-    AngularMaterialModule
+    AngularMaterialModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -7,5 +7,6 @@ export class FlightSchedule {
      arrivalTime!:Date
      flightDuration!: number;
      gateNumber!: string;
+     economyClassCost: string
 
 }

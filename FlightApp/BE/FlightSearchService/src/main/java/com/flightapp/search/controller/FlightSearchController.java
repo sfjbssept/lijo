@@ -21,8 +21,8 @@ public class FlightSearchController {
 	@Autowired
 	FlightSerchService flightSerchService;
 	@GetMapping()
-	public ResponseEntity<List<FlightScheduleDto>> searchFlights(@RequestParam String from ,@RequestParam String to){
-		List<FlightScheduleDto> list = flightSerchService.searchFlight(from,to);
+	public ResponseEntity<List<FlightScheduleDto>> searchFlights(@RequestParam String from ,@RequestParam String to,@RequestParam String depDate){
+		List<FlightScheduleDto> list = flightSerchService.searchFlight(from,to,depDate);
 		return new ResponseEntity<List<FlightScheduleDto>>(list, HttpStatus.OK);
 		
 	}
