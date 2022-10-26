@@ -16,13 +16,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.flightapp.admin.dao.entity.Airline;
 import com.flightapp.admin.dao.entity.Flight;
+import com.flightapp.admin.dto.AirLineName;
 import com.flightapp.admin.dto.AirlineRequestDto;
 import com.flightapp.admin.dto.FlightDto;
 import com.flightapp.admin.service.AdminService;
 
 @RestController
 @RequestMapping(value = "admin")
-public class AdminController {
+public class AdminController extends BaseController{
 
 	@Autowired
 	AdminService adminService;
@@ -71,9 +72,9 @@ public class AdminController {
 
 	// add flight
 	@PostMapping(value = "flight/{id}")
-	public ResponseEntity<FlightDto> addFlight(@RequestBody FlightDto flightDto,@PathVariable Integer id) {
-		adminService.SaveFlight(flightDto,id);
-		return new ResponseEntity<>(flightDto, HttpStatus.OK);
+	public ResponseEntity<?> addFlight(@RequestBody FlightDto flightDto,@PathVariable Integer id) {
+		String flightId =   adminService.SaveFlight(flightDto,id);
+		return buildResponseMessage(HttpStatus.OK, "FLight added successfully with ID:"+flightId);
 	}
 
 	// delete flight
@@ -88,6 +89,19 @@ public class AdminController {
 	@GetMapping(value = "flight/{id}")
 	public Flight getFlight(@PathVariable Integer id) {
 		return adminService.getFlight(id);
+
+	}
+	// get all flight
+
+		@GetMapping(value = "flight")
+		public List<Flight> getAllFlights() {
+			return adminService.getAllFlights();
+
+		}
+
+	@GetMapping(value = "airline/name")
+	public List<AirLineName> getAirlineList() {
+		return adminService.getAirLinesNames();
 
 	}
 

@@ -1,8 +1,11 @@
 package com.flightapp.admin.service.impl;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,10 +15,12 @@ import com.flightapp.admin.dao.entity.Airline;
 import com.flightapp.admin.dao.entity.Flight;
 import com.flightapp.admin.dao.repo.AirlineRepo;
 import com.flightapp.admin.dao.repo.FlightRepo;
+import com.flightapp.admin.dto.AirLineName;
 import com.flightapp.admin.dto.AirlineRequestDto;
 import com.flightapp.admin.dto.FlightDto;
+import com.flightapp.admin.exception.ResourceExistException;
+import com.flightapp.admin.exception.ResourceNotFoundException;
 import com.flightapp.admin.service.AdminService;
-import com.flightspp.admin.exception.ResourceNotFoundException;
 
 @Service
 public class AdminServiceImpl implements AdminService {
@@ -65,9 +70,13 @@ public class AdminServiceImpl implements AdminService {
 	//*******************FLIGHT******************//
 	@Override
 	public String SaveFlight(FlightDto flightDto,Integer id) {
-		
+		flightDto.setScheduledDays("DAILY");
 		Flight flight = mapper.map(flightDto, Flight.class);
 		flight.setAirline(getAirline(id));
+		Optional<Flight> f =flightRepo.findByFlightCode(flight.getFlightCode());  
+		if(f.isPresent()) {
+		throw new  ResourceExistException("FLightCode","Flight",Integer.parseInt(flightDto.getFlightCode()));
+		}
 	    flight =  flightRepo.save(flight);
 		return flight.getId().toString();
 	}
@@ -111,6 +120,18 @@ public class AdminServiceImpl implements AdminService {
 	public Flight getFlight(Integer id) {
 		return flightRepo.findById(id).orElseThrow(()->
 		new ResourceNotFoundException("id","Flight",id));
+	}
+
+
+	@Override
+	public List<AirLineName> getAirLinesNames() {
+		return airlineRepo.findAirlineNames();
+	}
+
+
+	@Override
+	public List<Flight> getAllFlights() {
+		return flightRepo.findAll();
 	}
 
 }

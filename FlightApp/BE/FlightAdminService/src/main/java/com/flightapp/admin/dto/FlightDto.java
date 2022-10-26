@@ -21,14 +21,15 @@ public class FlightDto {
 	private String scheduledDays;
 	
 
-	private String instrument;
+	private String aircraftModel;
 	
 	
 	private String status;
 	
 
-	private Boolean internationalService;
+	private String internationalService;
 	
 
-	private Boolean domesticService;
+	private String domesticService;
+	
 }

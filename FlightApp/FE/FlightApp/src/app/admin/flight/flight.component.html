@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="col">
+        <nav aria-label="...">
+            <ul class="pagination justify-content-center">
+                <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1">Previous</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item active">
+                    <a class="page-link" href="#">2 <span class="sr-only"></span></a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#">Next</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="col">
+        <table class="table">
+            <caption>List of Flights</caption>
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Flight Code</th>
+                    <th scope="col">aircraftModel</th>
+                    <th scope="col">Seat Count</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Internationl</th>
+                    <th scope="col">Domestic</th>
+                    <th scope="col">Trx</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of flights;let i = index">
+                    <th scope="row">{{i+1}}</th>
+                    <td>{{item.flightCode}}</td>
+                    <td>{{item.aircraftModel}}</td>
+                    <td>{{item.flightRowCount}}</td>
+                    <td>{{item.status}}</td>
+                    <td>{{(item.internationalService=='1')?'YES': 'NO'}}</td>
+                    <td>{{item.domesticService=='1'?'YES':'NO'}}</td>
+                    <td><Button class="btn btn-primary" (click)="updateFlight(item)">UPDATE</Button></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>

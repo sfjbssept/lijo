@@ -33,7 +33,6 @@ public class Flight implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@JsonIgnore
 	private Integer id;
 	
 	@Column(name = "flight_code")
@@ -46,6 +45,8 @@ public class Flight implements Serializable {
 	@JoinColumn(name = "airline_id", nullable = false)
 	@JsonIgnore
 	private Airline airline;
+	@Column(name ="airline_id" ,insertable = false,updatable = false)
+	private Integer airlineId;
 	
 	@Column(name = "business_class_seats")
 	private Integer businessClassSeatCount;
@@ -56,16 +57,16 @@ public class Flight implements Serializable {
 	@Column(name = "scheduled_days")
 	private String scheduledDays;
 	
-	@Column(name = "instrument")
-	private String instrument;
+	@Column(name = "aircraft_model")
+	private String aircraftModel;
 	
 	@Column(name = "status")
 	private String status;
 	
 	@Column(name = "international_service")
-	private Boolean internationalService;
+	private String internationalService;
 	
 	@Column(name = "domestic_service")
-	private Boolean domesticService;
+	private String domesticService;
 	
 }

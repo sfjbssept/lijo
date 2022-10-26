@@ -4,7 +4,8 @@ import { FlightComponent } from './flight/flight.component';
 
 const routes: Routes = [
   {path: '' , redirectTo: 'flight' ,pathMatch: 'full'},
-  {path: 'flight' , component: FlightComponent}
+  {path: 'flight' , component: FlightComponent},
+  {path: 'admin' ,loadChildren:() => import('./admin/admin.module').then(m => m.AdminModule)}
 ];
 
 @NgModule({
