@@ -2,8 +2,7 @@
     <div class="card  div-card">
         <div class="card-body ">
             <form #form="ngForm" (ngSubmit)="onSubmit()">
-                <h3 class="flightFont" *ngIf="!isUpdate">Register New Flights</h3>
-                <h3 class="flightFont" *ngIf="isUpdate">Update Flight Data</h3>
+                <h3 class="flightFont">Add New Flight Schedule</h3>
                 <div class="alert alert-danger" role="alert" *ngIf="errorMessage">
                     {{errorMessage}}
                 </div>
@@ -12,26 +11,31 @@
                 </div>
                 <div class="form-row row">
                     <div class="form-group col-md-6">
-                        <label for="airLine">AirLine</label>
-                        <div class="col-sm-10">
-                            <select class="form-control" id="airLine" required [(ngModel)]="flight.airlineId"
+                        <label for="airLine">Source Location</label>
+                        <input type="text" class="form-control" id="sourceLocation" required [(ngModel)]="flightSchedule.sourceLocation"
+                            name="sourceLocation" [readonly]="isUpdate" aria-describedby="Source  Locaton"
+                            placeholder="Enter Source Location"
+                            [ngClass]="{'has-danger': sourceLocation.invalid && (sourceLocation.dirty || sourceLocation.touched)}"
+                            #sourceLocation="ngModel">
+                        <!-- <div class="col-sm-10">
+                            <select class="form-control" id="airLine" required [(ngModel)]="flightSchedule.sourceLocation"
                                 name="airlineId" #airlineId="ngModel" [ngClass]="{
                                 'has-danger': airlineId.invalid && (airlineId.dirty || airlineId.touched)}">
                                 <option *ngFor="let item of airLineList" [value]="item.id">{{item.airlineName}}
                                 </option>
                             </select>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="form-group col-md-6">
                         <label for="flightCode">Flight Code</label>
-                        <input type="text" class="form-control" id="flightCode" required [(ngModel)]="flight.flightCode"
+                        <input type="text" class="form-control" id="flightCode" required [(ngModel)]="flightSchedule.destination"
                             name="flightCode" [readonly]="isUpdate" aria-describedby="Flight Code"
                             placeholder="Enter Flight Code"
                             [ngClass]="{'has-danger': flightCode.invalid && (flightCode.dirty || flightCode.touched)}"
                             #flightCode="ngModel">
                     </div>
                 </div>
-                <div class="form-row row">
+                <!-- <div class="form-row row">
                     <div class="form-group col-md-6">
                         <label for="flightRowCount">Flight Row Count</label>
                         <input type="number" class="form-control" id="flightRowCount" required
@@ -98,54 +102,12 @@
                             name="domesticService" [checked]="domesticService">
                         <label class="form-check-label" for="domestic">Domestic</label>
                     </div>
-                </div>
+                </div> -->
                 <button *ngIf="!isUpdate" type="submit" [disabled]="form.invalid || (!form.touched || !form.dirty)"
                     class="btn btn-primary">Register</button>
                 <button *ngIf="isUpdate" type="submit" [disabled]="form.invalid || (!form.touched || !form.dirty)"
                     class="btn btn-primary">UPDATE</button>
             </form>
         </div>
-        <!-- <div class="col row">
-            <div class="col-9">
-                <h4 class="flightFont">Flight Schedule</h4>
-            </div>
-            <div class="col-3"> <button class="btn btn-info ">ADD SCHEDULE</button></div>
-        </div>
-        <div class="col">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Flight Code</th>
-                        <th scope="col">aircraftModel</th>
-                        <th scope="col">Seat Count</th>
-                        <th scope="col">Status</th>
-                        <th scope="col">Internationl</th>
-                        <th scope="col">Domestic</th>
-                        <th scope="col"></th>
-                        <th scope="col"></th>
-
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let item of flights;let i = index">
-                        <th scope="row">{{i+1}}</th>
-                        <td>{{item.flightCode}}</td>
-                        <td>{{item.aircraftModel}}</td>
-                        <td>{{item.flightRowCount}}</td>
-                        <td>{{item.status}}</td>
-                        <td>{{(item.internationalService=='1')?'YES': 'NO'}}</td>
-                        <td>{{item.domesticService=='1'?'YES':'NO'}}</td>
-                        <td><Button class="btn btn-primary">
-                                <fa-icon icon="pen-to-square"></fa-icon>
-                            </Button></td>
-                        <td> <Button class="btn btn-light">
-                                <fa-icon icon="trash"></fa-icon>
-                            </Button> </td>
-                    </tr>
-                </tbody>
-            </table>
-
-        </div> -->
     </div>
 </div>

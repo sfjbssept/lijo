@@ -30,4 +30,8 @@ export class FlightComponent implements OnInit {
    localStorage.setItem('selectedFlight',JSON.stringify(flight));
    this.route.navigate(['/admin/register/flight'],{queryParams:{'isUpdate':true}});
   }
+  deleteFlight(flight: Flight) {
+    localStorage.setItem('selectedFlight',JSON.stringify(flight));
+    this.route.navigate(['/admin/register/flight'],{queryParams:{'isUpdate':true}});
+   }
 }

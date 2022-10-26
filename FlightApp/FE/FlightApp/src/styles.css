@@ -14,3 +14,14 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .flightFont{
     font-weight: bold; color: #eb8034;
 }
+.div-card{
+    padding: 5%;
+    padding-bottom: 10%;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+.div-bg{
+    background-color: rgb(225, 231, 238);
+    width: 100%;
+    padding: 2%;
+}

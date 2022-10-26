@@ -20,6 +20,7 @@ export class RegisterFlightComponent implements OnInit {
   domesticService = true;
   @ViewChild('form') form: any;
   airLineList: AirLine[];
+  flights: Flight[];
   constructor(public adminService: AdminService, public route: ActivatedRoute) { 
     this.route.queryParams.subscribe(params=>{
     this.isUpdate =params['isUpdate'];
@@ -27,6 +28,7 @@ export class RegisterFlightComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.getAllFlights();
     this.resetMessages();
     this.adminService.getAirLineNames().subscribe({
      error: (e) => {console.log(e)} , // errorHandler 
@@ -72,6 +74,16 @@ export class RegisterFlightComponent implements OnInit {
       }
     }
     });
+  }
+  getAllFlights(){
+    this.adminService.getFligths().subscribe({
+      next: data => {
+      this.flights =data as Flight[];
+      },
+      error: e => {
+        console.log(e);
+      }
+    })
   }
 
 }
