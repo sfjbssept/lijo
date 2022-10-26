@@ -69,12 +69,12 @@ public class AdminServiceImpl implements AdminService {
 
 	//*******************FLIGHT******************//
 	@Override
-	public String SaveFlight(FlightDto flightDto,Integer id) {
+	public String SaveFlight(FlightDto flightDto) {
 		flightDto.setScheduledDays("DAILY");
 		Flight flight = mapper.map(flightDto, Flight.class);
-		flight.setAirline(getAirline(id));
+		flight.setAirline(getAirline(flightDto.getAirlineId()));
 		Optional<Flight> f =flightRepo.findByFlightCode(flight.getFlightCode());  
-		if(f.isPresent()) {
+		if(f.isPresent() && flightDto.getId()==null) {
 		throw new  ResourceExistException("FLightCode","Flight",Integer.parseInt(flightDto.getFlightCode()));
 		}
 	    flight =  flightRepo.save(flight);

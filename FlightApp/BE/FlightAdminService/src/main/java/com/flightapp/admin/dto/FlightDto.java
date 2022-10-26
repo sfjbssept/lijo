@@ -6,6 +6,10 @@ import lombok.Data;
 public class FlightDto {
 
 	
+	private Integer id;
+	
+	private Integer airlineId;
+	
 	private String flightCode;
 	
 	

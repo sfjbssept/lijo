@@ -71,9 +71,9 @@ public class AdminController extends BaseController{
 	// ***********************************************//
 
 	// add flight
-	@PostMapping(value = "flight/{id}")
-	public ResponseEntity<?> addFlight(@RequestBody FlightDto flightDto,@PathVariable Integer id) {
-		String flightId =   adminService.SaveFlight(flightDto,id);
+	@PostMapping(value = "flight")
+	public ResponseEntity<?> addFlight(@RequestBody FlightDto flightDto) {
+		String flightId =   adminService.SaveFlight(flightDto);
 		return buildResponseMessage(HttpStatus.OK, "FLight added successfully with ID:"+flightId);
 	}
 

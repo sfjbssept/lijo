@@ -16,8 +16,8 @@ export class RegisterFlightComponent implements OnInit {
   errorMessage ="";
   successMessage ="";
   status = "active";
-  internationalService = "true";
-  domesticService = "true";
+  internationalService = true;
+  domesticService = true;
   @ViewChild('form') form: any;
   airLineList: AirLine[];
   constructor(public adminService: AdminService, public route: ActivatedRoute) { 
@@ -27,8 +27,7 @@ export class RegisterFlightComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.flight);
-    this.resetMessages(this.flight);
+    this.resetMessages();
     this.adminService.getAirLineNames().subscribe({
      error: (e) => {console.log(e)} , // errorHandler 
      next: (d) => {
@@ -38,31 +37,32 @@ export class RegisterFlightComponent implements OnInit {
     });
   }
   loadForm() {
-    //this.flight.id = this.airLineList[0].id;
     if(this.isUpdate) {
       let jsonObject = JSON.parse(localStorage.getItem('selectedFlight'));
       this.flight = jsonObject as Flight;
       console.log(this.airLineList);
       console.log(this.flight.id);
-
+      this.internationalService = this.flight.internationalService==='1'?true:false;
+    this.domesticService =this.flight.domesticService==='1'?true:false;
     }else{
       localStorage.clear();
       this.flight = new Flight();
+      this.internationalService = true;
+      this.domesticService = true;
     }
   }
-  resetMessages(flight: Flight) {
+  resetMessages() {
     this.errorMessage = this.successMessage ="";
-    this.internationalService = flight? (flight.internationalService=='1'?"true":"false"): "true";
-    this.domesticService =flight? (flight.internationalService=='1'?"true":"false"): "true";
   }
   onSubmit(){
-    this.resetMessages(null);
+    this.resetMessages();
     this.form.value.internationalService = this.form.value.internationalService?"1":"0";
     this.form.value.domesticService = this.form.value.domesticService?"1":"0";
-    this.adminService.saveFlight(this.form.value,this.form.value.airlineId).subscribe({
+    this.adminService.saveFlight(this.form.value,this.isUpdate?this.flight.id:null).subscribe({
       next: (data:any) => {
         this.successMessage = data.message;
         this.form.reset();
+        localStorage.clear();
         console.log(data);
     },
     error: error => {

@@ -24,6 +24,7 @@
                     <div class="form-group col-md-6">
                         <label for="flightCode">Flight Code</label>
                         <input type="text" class="form-control" id="flightCode" required [(ngModel)] = "flight.flightCode" name="flightCode"
+                            [readonly]="isUpdate"
                             aria-describedby="Flight Code" placeholder="Enter Flight Code"
                             [ngClass]="{'has-danger': flightCode.invalid && (flightCode.dirty || flightCode.touched)}"
                             #flightCode="ngModel" >
@@ -87,15 +88,19 @@
                 <div class=" form-row row">
                     <div class="col-md-1"></div>
                     <div class="form-group col-md-5 form-check">
-                        <input type="checkbox" class="form-check-input" id="internationl" name="internationalService"  [(ngModel)]="internationalService" checked>
+                        <input type="checkbox" class="form-check-input" id="internationl" name="internationalService"  
+                        [(ngModel)]="internationalService"
+                        [checked]="internationalService"
+                        >
                         <label class="form-check-label" for="internationl">Internationl</label>
                     </div>
                     <div class="form-group col-md-5 form-check">
-                        <input type="checkbox" class="form-check-input" id="domestic" [(ngModel)]="domesticService" name="domesticService"  [checked]="true">
+                        <input type="checkbox" class="form-check-input" id="domestic" [(ngModel)]="domesticService" name="domesticService"
+                        [checked]="domesticService">
                         <label class="form-check-label" for="domestic">Domestic</label>
                     </div>
                 </div>
-                <button type="submit" [disabled]="form.invalid" class="btn btn-primary">Submit</button>
+                <button type="submit" [disabled]="form.invalid || (!form.touched || !form.dirty)" class="btn btn-primary">Submit</button>
             </form>
         </div>
     </div>

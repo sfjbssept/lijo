@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Flight } from '../flight/flight';
 
 @Injectable({
   providedIn: 'root'
@@ -11,8 +12,10 @@ export class AdminService {
   getAirLineNames(){
     return this.httpClient.get(this.rootURL+"/admin/airline/name");
   }
-  saveFlight(value: any,id: any) {
-    return this.httpClient.post(this.rootURL+"/admin/flight/"+id,value,{responseType:'json'});
+  saveFlight(value: Flight,id: any) {
+    if(id!==null)
+    value.id = id;
+    return this.httpClient.post(this.rootURL+"/admin/flight",value,{responseType:'json'});
   } 
   getFligths(){
     return this.httpClient.get(this.rootURL+"/admin/flight");

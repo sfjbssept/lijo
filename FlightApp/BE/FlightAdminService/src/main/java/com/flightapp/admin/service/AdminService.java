@@ -21,7 +21,7 @@ public interface AdminService {
 	void updateAirline(AirlineRequestDto airLine, Integer id);
 	
 	
-	String SaveFlight(FlightDto flightDto, Integer id);
+	String SaveFlight(FlightDto flightDto);
 
 	void deleteFlight(Integer id);
 
