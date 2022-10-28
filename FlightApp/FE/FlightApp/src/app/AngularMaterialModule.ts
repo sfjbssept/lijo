@@ -8,7 +8,7 @@ const materialModules = [
   MatDatepickerModule,
   MatNativeDateModule,
   MatFormFieldModule,
-  MatInputModule
+  MatInputModule,
 ];
 @NgModule({
   imports: [

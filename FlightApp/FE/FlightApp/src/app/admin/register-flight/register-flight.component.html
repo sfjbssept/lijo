@@ -1,7 +1,7 @@
 <div class="container div-bg">
     <div class="card  div-card">
         <div class="card-body ">
-            <form #form="ngForm" (ngSubmit)="onSubmit()">
+            <form #form="ngForm" (ngSubmit)="onSubmit()" *ngIf="flight">
                 <h3 class="flightFont" *ngIf="!isUpdate">Register New Flights</h3>
                 <h3 class="flightFont" *ngIf="isUpdate">Update Flight Data</h3>
                 <div class="alert alert-danger" role="alert" *ngIf="errorMessage">

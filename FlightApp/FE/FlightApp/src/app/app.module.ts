@@ -13,6 +13,7 @@ import {MatNativeDateModule} from '@angular/material/core';
 import {MatIconModule} from '@angular/material/icon';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/compiler';
 import { AngularMaterialModule } from './AngularMaterialModule';
+import { SharedModule } from './shared/shared.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,11 +26,8 @@ import { AngularMaterialModule } from './AngularMaterialModule';
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
-    BrowserAnimationsModule,
-    MatNativeDateModule,
-    BrowserAnimationsModule,
-    AngularMaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,15 +1,17 @@
 import { NgModule } from '@angular/core';
-import { CommonModule, registerLocaleData } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { RegisterFlightComponent } from './register-flight/register-flight.component';
-import { Router, RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { AdminComponent } from './admin/admin.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FlightComponent } from './flight/flight.component';
 import { FlightScheduleComponent } from './admin/flight-schedule/flight-schedule.component';
 import { FontAwesomeModule ,FaIconLibrary,} from '@fortawesome/angular-fontawesome';
 import { faCoffee, faFilm, faPenToSquare, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { faStackOverflow } from '@fortawesome/free-brands-svg-icons';
-
+import { AngularMaterialModule } from '../AngularMaterialModule';
+import { MatNativeDateModule } from '@angular/material/core';
+import { NgxMatTimepickerModule } from 'ngx-mat-timepicker';
 
 const routes: Routes = [
   {path:'', component: AdminComponent},
@@ -28,7 +30,11 @@ const routes: Routes = [
     FormsModule,
     CommonModule,
     RouterModule.forChild(routes),
-    FontAwesomeModule
+    FontAwesomeModule,
+    MatNativeDateModule,
+    AngularMaterialModule,
+    NgxMatTimepickerModule.setLocale('en-US'),
+    ReactiveFormsModule
   ]
 })
 export class AdminModule { 

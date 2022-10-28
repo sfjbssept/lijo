@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { FormControl } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Flight } from 'src/app/flight/flight';
 import { FlightSchedule } from 'src/app/flight/flightSchedule';
@@ -12,7 +13,12 @@ import { AirLine } from '../airLine';
 })
 export class FlightScheduleComponent implements OnInit {
 
+  formControlItem: FormControl = new FormControl("");
+  required: boolean = !1;
+  @ViewChild("timepicker") timepicker: any;
+  
   flightSchedule: FlightSchedule;
+  depDate1:any;
   isUpdate =false;
   errorMessage ="";
   successMessage ="";
@@ -86,4 +92,19 @@ export class FlightScheduleComponent implements OnInit {
       }
     })
   }
+  openFromIcon(timepicker: { open: () => void }) {
+    if (!this.formControlItem.disabled) {
+      timepicker.open();
+    }
+  }
+
+  /**
+   * Function to clear FormControl's value, called from the HTML template using the clear button
+   *
+   * @param $event - The Event's data object
+   */
+  onClear($event: Event) {
+    this.formControlItem.setValue(null);
+  }
+
 }

@@ -7,6 +7,15 @@ export class FlightSchedule {
      arrivalTime!:Date
      flightDuration!: number;
      gateNumber!: string;
-     economyClassCost: string
-
+     economyClassCost: string;
+     businessClassCost: string
+     constructor(){
+          this.arrivalTime = undefined;
+          this.businessClassCost = undefined;
+          this.departureTime = undefined;
+          this.sourceLocation = undefined;
+          this.destination =undefined;
+          this.gateNumber = undefined;
+          this.economyClassCost =  undefined;
+     }
 }
