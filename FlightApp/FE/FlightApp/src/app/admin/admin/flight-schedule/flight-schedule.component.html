@@ -1,14 +1,14 @@
 <div class="container div-bg">
     <div class="card  div-card">
+        <div class="alert alert-danger" role="alert" *ngIf="errorMessage">
+            {{errorMessage}}
+        </div>
+        <div class="alert alert-success" role="alert" *ngIf="successMessage">
+            {{successMessage}}
+        </div>
         <div class="card-body ">
             <form #form="ngForm" (ngSubmit)="onSubmit()" *ngIf="flightSchedule">
                 <h3 class="flightFont">Add New Flight Schedule</h3>
-                <div class="alert alert-danger" role="alert" *ngIf="errorMessage">
-                    {{errorMessage}}
-                </div>
-                <div class="alert alert-success" role="alert" *ngIf="successMessage">
-                    {{successMessage}}
-                </div>
                 <div class="form-row row">
                     <div class="form-group col-md-6">
                         <label for="airLine">Source Location</label>
@@ -57,40 +57,53 @@
                     <div class="form-group col-md-4">
                         <label for="model">Economy Class Cost</label>
                         <mat-form-field class="form-control">
-                            <input type="text"  matInput  [matDatepicker]="picker" aria-label="Departure Date"> 
+                            <input type="text"  matInput  [matDatepicker]="picker"
+                              [(ngModel)]="flightSchedule.departureTime" name="departureTime" aria-label="Departure Date"> 
                               <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                              <mat-datepicker #picker   ></mat-datepicker>
+                              <mat-datepicker #picker  (closed)="onClose(timepicker)" ></mat-datepicker>
                             </mat-form-field>
-                            <button (click)="openFromIcon(timepicker)"></button>
+                            <!-- <input (click)="openFromIcon(timepicker)" [formControl]="formControlItem" [ngxMatTimepicker]="timepicker"
+                            [format]="24"/> -->
                     </div>
                     <div class="form-group col-md-2">
-                        <mat-form-field appearance="outline">
-                            <mat-label>MY FIELD</mat-label>
-                            <input
-                              type="text"
-                              matInput
-                              [ngxMatTimepicker]="timepicker"
-                              [format]="24"
-                              [required]="required"
-                              readonly
-                              [formControl]="formControlItem"
-                            />
-                          
-                            <mat-icon
-                              matPrefix
-                              *ngIf="formControlItem.value && !formControlItem.disabled && !required"
-                              (click)="onClear($event)"
-                            >
-                              close
-                            </mat-icon>
-                          
-                            <mat-icon
-                              matSuffix
-                              *ngIf="!formControlItem.disabled"
-                              (click)="openFromIcon(timepicker)"
-                              >schedule</mat-icon
-                            >
-                          </mat-form-field>
+                        <button class="btn btn-primary"
+                        type=""
+                        hidden
+                        
+                        [ngxMatTimepicker]="timepicker"
+                        [format]="24"
+                        [required]="required"
+                        readonly
+                        [formControl]="formControlItem"
+                        
+                      >{{formControlItem.value}}</button>
+                        <!-- <input
+    type="text"
+    
+    [ngxMatTimepicker]="timepicker"
+    [format]="24"
+    [required]="required"
+    readonly
+    [formControl]="formControlItem"
+    (click)="openFromIcon(timepicker)"
+  /> -->
+ 
+  
+    <!-- <mat-icon
+      matPrefix
+      *ngIf="formControlItem.value && !formControlItem.disabled && !required"
+      (click)="onClear($event)"
+    >
+      close
+    </mat-icon>
+  
+    <mat-icon
+      matSuffix
+      *ngIf="!formControlItem.disabled"
+      (click)="openFromIcon(timepicker)"
+      >schedule</mat-icon
+    > -->
+  
                           
                           
                     </div>
@@ -144,4 +157,4 @@
     </div>
 </div>
 
-<ngx-mat-timepicker #timepicker></ngx-mat-timepicker>
+<ngx-mat-timepicker #timepicker  (closed)="onCloseTimePicker()"></ngx-mat-timepicker>

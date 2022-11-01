@@ -81,6 +81,7 @@ export class RegisterFlightComponent implements OnInit {
       this.flights =data as Flight[];
       },
       error: e => {
+        this.errorMessage ="Some error Occured Please Try Again";
         console.log(e);
       }
     })
