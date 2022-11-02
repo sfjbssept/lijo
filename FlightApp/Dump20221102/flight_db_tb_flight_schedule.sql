@@ -1,0 +1,63 @@
+CREATE DATABASE  IF NOT EXISTS `flight_db` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `flight_db`;
+-- MySQL dump 10.13  Distrib 8.0.30, for Win64 (x86_64)
+--
+-- Host: localhost    Database: flight_db
+-- ------------------------------------------------------
+-- Server version	8.0.30
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `tb_flight_schedule`
+--
+
+DROP TABLE IF EXISTS `tb_flight_schedule`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `tb_flight_schedule` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `flight_id` int DEFAULT NULL,
+  `source` varchar(255) DEFAULT NULL,
+  `destination` varchar(255) DEFAULT NULL,
+  `departure_time` timestamp NULL DEFAULT NULL,
+  `arrival_time` timestamp NULL DEFAULT NULL,
+  `duration` int DEFAULT NULL,
+  `gate_no` varchar(10) DEFAULT NULL,
+  `business_class_cost` int DEFAULT NULL,
+  `economy_cost` int DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `flight_id_idx` (`flight_id`),
+  CONSTRAINT `flight_id` FOREIGN KEY (`flight_id`) REFERENCES `tb_flight` (`id`) ON DELETE RESTRICT
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tb_flight_schedule`
+--
+
+LOCK TABLES `tb_flight_schedule` WRITE;
+/*!40000 ALTER TABLE `tb_flight_schedule` DISABLE KEYS */;
+INSERT INTO `tb_flight_schedule` VALUES (1,3,'GOA','LONDON','2022-10-28 17:48:00','2022-09-28 12:41:00',6,'GATE01',120000,78000),(6,7,'BENGALURU','LONDON','2022-10-14 10:10:00','2022-10-14 19:10:00',10,'GATE05',105600,40052),(10,8,'BENGALURU','LONDON','2022-10-14 10:10:00','2022-10-14 12:10:00',9,'GATE06',105600,40441),(11,6,'GOA','LONDON','2022-10-29 06:41:00','2022-09-29 12:41:00',6,'GATE01',95000,28000),(12,3,'GOA','LONDON','2022-11-02 12:00:00','2022-11-02 13:00:00',3600000,'GA12',45000,15000),(13,5,'GOA','LONDON','2022-11-02 13:00:00','2022-11-02 23:55:00',39300000,'GATE 1',54000,19000);
+/*!40000 ALTER TABLE `tb_flight_schedule` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2022-11-02 16:53:09
