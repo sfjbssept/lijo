@@ -9,6 +9,7 @@ export class FlightSchedule {
      gateNumber!: string;
      economyClassCost: string;
      businessClassCost: string
+     flightId: string
      constructor(){
           this.arrivalTime = undefined;
           this.businessClassCost = undefined;
@@ -17,5 +18,7 @@ export class FlightSchedule {
           this.destination =undefined;
           this.gateNumber = undefined;
           this.economyClassCost =  undefined;
+          this.flightDuration = 0;
+          this.flightId = undefined;
      }
 }

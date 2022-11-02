@@ -11,150 +11,112 @@
                 <h3 class="flightFont">Add New Flight Schedule</h3>
                 <div class="form-row row">
                     <div class="form-group col-md-6">
-                        <label for="airLine">Source Location</label>
-                        <input type="text" class="form-control" id="sourceLocation" required [(ngModel)]="flightSchedule.sourceLocation"
-                            name="sourceLocation" [readonly]="isUpdate" aria-describedby="Source  Locaton"
-                            placeholder="Enter Source Location"
-                            [ngClass]="{'has-danger': sourceLocation.invalid && (sourceLocation.dirty || sourceLocation.touched)}"
-                            #sourceLocation="ngModel">
-                        <!-- <div class="col-sm-10">
-                            <select class="form-control" id="airLine" required [(ngModel)]="flightSchedule.sourceLocation"
-                                name="airlineId" #airlineId="ngModel" [ngClass]="{
-                                'has-danger': airlineId.invalid && (airlineId.dirty || airlineId.touched)}">
-                                <option *ngFor="let item of airLineList" [value]="item.id">{{item.airlineName}}
+                        <label for="airLine">Select Flight</label>
+                        <div class="col-sm-10">
+                            <select class="form-control" id="flightId" required [(ngModel)]="flightSchedule.flightId"
+                                name="flightId" #flightId="ngModel" [ngClass]="{
+                                'has-danger': flightId.invalid && (flightId.dirty || flightId.touched)}">
+                                <option *ngFor="let item of flights" [value]="item.id">{{item.flightCode}}
                                 </option>
                             </select>
-                        </div> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row row">
+                    <div class="form-group col-md-6">
+                        <label for="airLine">Source Location</label>
+                        <input type="text" class="form-control" id="sourceLocation" required
+                            [(ngModel)]="flightSchedule.sourceLocation" name="sourceLocation" [readonly]="isUpdate"
+                            aria-describedby="Source  Locaton" placeholder="Enter Source Location"
+                            [ngClass]="{'has-danger': sourceLocation.invalid && (sourceLocation.dirty || sourceLocation.touched)}"
+                            #sourceLocation="ngModel">
                     </div>
                     <div class="form-group col-md-6">
                         <label for="destination">Destination</label>
-                        <input type="text" class="form-control" id="destination" required [(ngModel)]="flightSchedule.destination"
-                            name="destination" [readonly]="isUpdate" aria-describedby="Destination"
-                            placeholder="Enter destination"
+                        <input type="text" class="form-control" id="destination" required
+                            [(ngModel)]="flightSchedule.destination" name="destination" [readonly]="isUpdate"
+                            aria-describedby="Destination" placeholder="Enter destination"
                             [ngClass]="{'has-danger': destination.invalid && (destination.dirty || destination.touched)}"
                             #destination="ngModel">
                     </div>
                 </div>
-                 <div class="form-row row">
+                <div class="form-row row">
                     <div class="form-group col-md-6">
-                        <label for="gateNumber">GateNumber</label>
-                        <input type="number" class="form-control" id="gateNumber" required
-                            [(ngModel)]="flightSchedule.gateNumber" name="gateNumber"
-                            aria-describedby="GateNumber" placeholder="Enter gateNumber"
-                            [ngClass]="{'has-danger': gateNumber.invalid && (gateNumber.dirty || gateNumber.touched)}"
-                            #gateNumber="ngModel">
+                        <label for="model">Departure Time</label>
+                        <mat-form-field class="form-control">
+                            <input type="text" matInput [matDatepicker]="picker"
+                                [(ngModel)]="flightSchedule.departureTime" name="departureTime"
+                                aria-label="Departure Date">
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker (closed)="onClose(timepicker,false)"></mat-datepicker>
+                        </mat-form-field>
+                        <button class="btn btn-primary" type="" hidden [ngxMatTimepicker]="timepicker" [format]="24"
+                            [required]="required" readonly [formControl]="departureTimeCtrl"></button>
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="gateNumber">GateNumber</label>
-                        <input type="number" class="form-control" id="gateNumber" required
-                            [(ngModel)]="flightSchedule.gateNumber" name="gateNumber"
-                            aria-describedby="GateNumber" placeholder="Enter gateNumber"
-                            [ngClass]="{'has-danger': gateNumber.invalid && (gateNumber.dirty || gateNumber.touched)}"
-                            #gateNumber="ngModel">
+                        <label for="model">Arrival Time</label>
+                        <mat-form-field class="form-control">
+                            <input type="text" matInput [matDatepicker]="picker2"
+                                [(ngModel)]="flightSchedule.arrivalTime" name="arrivalTime" aria-label="Arrival time">
+                            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                            <mat-datepicker #picker2 (closed)="onClose(timepicker2,true)"></mat-datepicker>
+                        </mat-form-field>
+                        <button class="btn btn-primary" type="" hidden [ngxMatTimepicker]="timepicker2" [format]="24"
+                            [required]="required" readonly [formControl]="arrivalTimeCtrl"></button>
                     </div>
                 </div>
                 <div class="form-row row">
-                    <div class="form-group col-md-4">
-                        <label for="model">Economy Class Cost</label>
-                        <mat-form-field class="form-control">
-                            <input type="text"  matInput  [matDatepicker]="picker"
-                              [(ngModel)]="flightSchedule.departureTime" name="departureTime" aria-label="Departure Date"> 
-                              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                              <mat-datepicker #picker  (closed)="onClose(timepicker)" ></mat-datepicker>
-                            </mat-form-field>
-                            <!-- <input (click)="openFromIcon(timepicker)" [formControl]="formControlItem" [ngxMatTimepicker]="timepicker"
-                            [format]="24"/> -->
-                    </div>
-                    <div class="form-group col-md-2">
-                        <button class="btn btn-primary"
-                        type=""
-                        hidden
-                        
-                        [ngxMatTimepicker]="timepicker"
-                        [format]="24"
-                        [required]="required"
-                        readonly
-                        [formControl]="formControlItem"
-                        
-                      >{{formControlItem.value}}</button>
-                        <!-- <input
-    type="text"
-    
-    [ngxMatTimepicker]="timepicker"
-    [format]="24"
-    [required]="required"
-    readonly
-    [formControl]="formControlItem"
-    (click)="openFromIcon(timepicker)"
-  /> -->
- 
-  
-    <!-- <mat-icon
-      matPrefix
-      *ngIf="formControlItem.value && !formControlItem.disabled && !required"
-      (click)="onClear($event)"
-    >
-      close
-    </mat-icon>
-  
-    <mat-icon
-      matSuffix
-      *ngIf="!formControlItem.disabled"
-      (click)="openFromIcon(timepicker)"
-      >schedule</mat-icon
-    > -->
-  
-                          
-                          
+                    <div class="form-group col-md-6">
+                        <label for="flightDuration">Flight duration </label>
+                        <label class="form-control"> {{flightSchedule.flightDuration | date:"HH'h':mm'm'"}}</label>
+                        <!-- <input type="text" class="form-control" id="flightDuration" required
+                            [(ngModel)]="flightSchedule.flightDuration | date: HH'h':mm'm'" name="gateNumber" aria-describedby="FlightDuration"
+                            placeholder="Enter flight Duration"
+                            [ngClass]="{'has-danger': flightDuration.invalid && (flightDuration.dirty || flightDuration.touched)}"
+                            #flightDuration="ngModel"> -->
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="model">Economy Class Cost</label>
-                        <input type="text" class="form-control" id="model" required [(ngModel)]="flightSchedule.economyClassCost"
-                            name="economyClassCost" placeholder="Economy Class Cost"
+                        <label for="gateNumber">GateNumber</label>
+                        <input type="text" class="form-control" id="gateNumber" required
+                            [(ngModel)]="flightSchedule.gateNumber" name="gateNumber" aria-describedby="GateNumber"
+                            placeholder="Enter gateNumber"
+                            [ngClass]="{'has-danger': gateNumber.invalid && (gateNumber.dirty || gateNumber.touched)}"
+                            #gateNumber="ngModel">
+                    </div>
+                </div>
+                <div class=" form-row row">
+                    <div class="form-group col-md-6">
+                        <label for="businessClassCost">Business class Ticket Cost</label>
+                        <input type="number" class="form-control" id="businessClassCost" required
+                            [(ngModel)]="flightSchedule.businessClassCost" name="businessClassCost"
+                            aria-describedby="BusinessClassCost" placeholder="Enter businessClass Cost"
+                            [ngClass]="{'has-danger': businessClassCost.invalid && (businessClassCost.dirty || businessClassCost.touched)}"
+                            #businessClassCost="ngModel">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="gateNumber">EconomyClass Ticket Cost</label>
+                        <input type="number" class="form-control" id="economyClassCost" required
+                            [(ngModel)]="flightSchedule.economyClassCost" name="economyClassCost"
+                            aria-describedby="EconomyClassCost" placeholder="Enter EconomyClass Cost"
                             [ngClass]="{'has-danger': economyClassCost.invalid && (economyClassCost.dirty || economyClassCost.touched)}"
                             #economyClassCost="ngModel">
                     </div>
-
                 </div>
-                <!-- <div class="form-row row">
-                    <div class="col-md-6">
-                        <label for="status">Flight Status</label>
-                        <div class="form-check">
-                            <mat-form-field>
-                                <input type="text" matInput  [matDatepicker]="picker"  aria-label="Departure Date"> 
-                                  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                                  <mat-datepicker #picker   ></mat-datepicker>
-                                </mat-form-field>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" id="gridRadios2" required value="inactive"
-                                ngModel name="status" [(ngModel)]="status">
-                            <label class="form-check-label" for="gridRadios2">
-                                Inactive
-                            </label>
-                        </div>
+                <br>
+                <div class=" form-row row">
+                    <div class="col-md-1">
+                        <button *ngIf="!isUpdate" type="submit"
+                            [disabled]="form.invalid || (!form.touched || !form.dirty)"
+                            class="btn btn-primary">Register</button>
+                        <button *ngIf="isUpdate" type="submit"
+                            [disabled]="form.invalid || (!form.touched || !form.dirty)"
+                            class="btn btn-primary">UPDATE</button>
                     </div>
-                </div> -->
-                <!-- <div class=" form-row row">
-                    <div class="col-md-1"></div>
-                    <div class="form-group col-md-5 form-check">
-                        <input type="checkbox" class="form-check-input" id="internationl" name="internationalService"
-                            [(ngModel)]="internationalService" [checked]="internationalService">
-                        <label class="form-check-label" for="internationl">Internationl</label>
-                    </div>
-                    <div class="form-group col-md-5 form-check">
-                        <input type="checkbox" class="form-check-input" id="domestic" [(ngModel)]="domesticService"
-                            name="domesticService" [checked]="domesticService">
-                        <label class="form-check-label" for="domestic">Domestic</label>
-                    </div>
-                </div>  -->
-                <button *ngIf="!isUpdate" type="submit" [disabled]="form.invalid || (!form.touched || !form.dirty)"
-                    class="btn btn-primary">Register</button>
-                <button *ngIf="isUpdate" type="submit" [disabled]="form.invalid || (!form.touched || !form.dirty)"
-                    class="btn btn-primary">UPDATE</button>
+                </div>
             </form>
         </div>
     </div>
 </div>
 
-<ngx-mat-timepicker #timepicker  (closed)="onCloseTimePicker()"></ngx-mat-timepicker>
+<ngx-mat-timepicker #timepicker (closed)="onCloseTimePicker()"></ngx-mat-timepicker>
+<ngx-mat-timepicker #timepicker2 (closed)="onCloseTimePicker2()"></ngx-mat-timepicker>
