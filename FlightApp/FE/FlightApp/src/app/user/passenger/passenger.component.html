@@ -1,1 +1,112 @@
-<p>passenger works f!</p>
+<div class="container div-bg">
+    <!-- Reactive Form -->
+    <div class="card  div-card">
+        <div class="alert alert-danger" role="alert" *ngIf="errorMessage">
+            {{errorMessage}}
+        </div>
+        <div class="alert alert-success" role="alert" *ngIf="successMessage">
+            {{successMessage}}
+        </div>
+        <div class="card-body ">
+            <form #form="ngForm" (ngSubmit)="onSubmit()" *ngIf="passenger">
+                <h3 class="flightFont" *ngIf="!isUpdate">Add Passenger</h3>
+                <h3 class="flightFont" *ngIf="isUpdate">Update Passenger Data</h3>
+                <div class="form-row row">
+                    <div class="form-group col-md-6">
+                        <label for="airLine">Id Card Type</label>
+                        <div class="col-sm-10">
+                            <select class="form-control" id="airLine" required [(ngModel)]="passenger.idCardType"
+                                name="airlineId" #idCardType="ngModel" [ngClass]="{
+                                'has-danger': idCardType.invalid && (idCardType.dirty || idCardType.touched)}">
+                                <option  value="aadharCard">Aadhar Card</option>
+                                <option  value="votersId">Voters Id Card</option>
+                                <option  value="licenseNumber">LicenseNumber</option>
+                                <option  value="panCard">Pan Card</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="flightCode">Id  Card Number</label>
+                        <input type="text" class="form-control" id="idCardNo" required [(ngModel)]="passenger.idCardNo"
+                            name="idCardNo" [readonly]="isUpdate" aria-describedby="Id CardNo"
+                            placeholder="Enter idCard Number"
+                            [ngClass]="{'has-danger': idCardNo.invalid && (idCardNo.dirty || idCardNo.touched)}"
+                            #idCardNo="ngModel">
+                    </div>
+                </div>
+                <div class="form-row row">
+                    <div class="form-group col-md-6">
+                        <label for="phone">Phone</label>
+                        <input type="number" class="form-control" id="phone" required
+                            [(ngModel)]="passenger.phone" name="phone"
+                            aria-describedby="Phone" placeholder="Enter Phone Number"
+                            [ngClass]="{'has-danger': phone.invalid && (phone.dirty || phone.touched)}"
+                            #phone="ngModel">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email"
+                            [(ngModel)]="passenger.email" name="email" required
+                            aria-describedby="Email Address" placeholder="Enter Email Address"
+                            [ngClass]="{'has-danger': email.invalid && (email.dirty || email.touched)}"
+                            #email="ngModel">
+                    </div>
+                </div>
+                <div class="form-row row">
+                    <div class="form-group col-md-6">
+                        <label for="Dob">Dob</label>
+                        <mat-form-field class="form-control">
+                            <input type="text" matInput [matDatepicker]="picker"
+                                [(ngModel)]="passenger.dob" name="dob"
+                                [min]="minDate" [max]="maxDate"
+                                aria-label="Dob">
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker (closed)="onClose()" ></mat-datepicker>
+                        </mat-form-field>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="model">Age</label>
+                        <input type="text" class="form-control" id="model" required [(ngModel)]="passenger.age"
+                            name="age" placeholder="Age" readonly
+                            [ngClass]="{'has-danger': age.invalid && (age.dirty || age.touched)}"
+                            #age="ngModel">
+                    </div>
+
+                </div>
+                <div class="form-row row">
+                    <div class="form-group col-md-6">
+                        <label for="model">Name</label>
+                        <input type="text" class="form-control" id="model" required [(ngModel)]="passenger.name"
+                            name="name" placeholder="Name" 
+                            [ngClass]="{'has-danger': name.invalid && (name.dirty || name.touched)}"
+                            #name="ngModel">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="model">Passport Number</label>
+                        <input type="text" class="form-control" id="model" required [(ngModel)]="passenger.passportNo"
+                            name="passportNo" placeholder="passport Number" 
+                            [ngClass]="{'has-danger': passportNo.invalid && (passportNo.dirty || passportNo.touched)}"
+                            #passportNo="ngModel">
+                    </div>
+                </div>
+                <!-- <div class=" form-row row">
+                    <div class="col-md-1"></div>
+                    <div class="form-group col-md-5 form-check">
+                        <input type="checkbox" class="form-check-input" id="internationl" name="internationalService"
+                            [(ngModel)]="internationalService" [checked]="internationalService">
+                        <label class="form-check-label" for="internationl">Internationl</label>
+                    </div>
+                    <div class="form-group col-md-5 form-check">
+                        <input type="checkbox" class="form-check-input" id="domestic" [(ngModel)]="domesticService"
+                            name="domesticService" [checked]="domesticService">
+                        <label class="form-check-label" for="domestic">Domestic</label>
+                    </div>
+                </div> -->
+                <button *ngIf="!isUpdate" type="submit" [disabled]="form.invalid || (!form.touched || !form.dirty)"
+                    class="btn btn-primary">Register</button>
+                <button *ngIf="isUpdate" type="submit" [disabled]="form.invalid || (!form.touched || !form.dirty)"
+                    class="btn btn-primary">UPDATE</button>
+            </form>
+        </div>
+    </div>
+</div>

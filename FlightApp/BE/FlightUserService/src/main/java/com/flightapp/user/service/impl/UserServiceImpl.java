@@ -4,6 +4,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.flightapp.user.exception.ResourceNotFoundException;
 import com.flightapp.user.dao.entity.Passenger;
 import com.flightapp.user.dao.entity.UserData;
 import com.flightapp.user.dao.repo.UserDataRepo;
@@ -33,7 +34,8 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public Passenger addPassenger(PassengerDto passengerDto) {
 		Passenger p = mapper.map(passengerDto, Passenger.class);
-		p.setId(null);
+		userDataRepo.findById(p.getUserId()).orElseThrow(()->
+		new ResourceNotFoundException("id","Flight",p.getUserId()));
 		return PassengerRepo.save(p);
 	}
 

@@ -2357,3 +2357,357 @@ org.eclipse.core.runtime.CoreException: Launch configuration ASTFrame references
 2022-11-02 08:35:18,231 [Worker-1: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2022-11-02 08:35:18,231 [Worker-1: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
 2022-11-02 08:35:18,231 [Worker-1: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\sfjbs\Documents\Microservices\FlightApp\BE\FlightAdminService\src\test\resources
+2022-11-02 22:05:22,163 [Worker-8: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2022-11-02 22:05:37,093 [Worker-3: Importing Maven projects] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.flightapp.user:FlightUserService:0.0.1-SNAPSHOT @ D:\Lijo-Learn\AWS-fullstack-training\lijo-master\FlightApp\BE\FlightUserService\pom.xml.
+2022-11-02 22:05:37,902 [Worker-3: Importing Maven projects] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.flightapp.admin:FlightAdminService:0.0.1-SNAPSHOT @ D:\Lijo-Learn\AWS-fullstack-training\lijo-master\FlightApp\BE\FlightAdminService\pom.xml.
+2022-11-02 22:05:37,982 [Worker-3: Importing Maven projects] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.lamda:spring-cloud-function-lamda:0.0.1-SNAPSHOT @ D:\Lijo-Learn\AWS-fullstack-training\lijo-master\FlightApp\BE\spring-cloud-function-lamda\pom.xml.
+2022-11-02 22:05:38,108 [Worker-3: Importing Maven projects] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.flightapp.search:FlightSearchService:0.0.1-SNAPSHOT @ D:\Lijo-Learn\AWS-fullstack-training\lijo-master\FlightApp\BE\FlightSearchService\pom.xml.
+2022-11-02 22:05:38,172 [Worker-3: Importing Maven projects] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.flightapp.ticket:FlightBookingService:0.0.1-SNAPSHOT @ D:\Lijo-Learn\AWS-fullstack-training\lijo-master\FlightApp\BE\FlightBookingService\pom.xml.
+2022-11-02 22:05:38,242 [Worker-3: Importing Maven projects] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.eureka.app:Eureka:0.0.1-SNAPSHOT @ D:\Lijo-Learn\AWS-fullstack-training\lijo-master\FlightApp\BE\Eureka\pom.xml.
+2022-11-02 22:05:39,506 [Worker-3: Importing Maven projects] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/cloud/spring-cloud-starter-netflix-eureka-server/3.1.4/spring-cloud-starter-netflix-eureka-server-3.1.4.pom
+2022-11-02 22:05:39,871 [Worker-3: Importing Maven projects] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/cloud/spring-cloud-starter-netflix-eureka-server/3.1.4/spring-cloud-starter-netflix-eureka-server-3.1.4.pom
+2022-11-02 22:05:40,087 [Worker-3: Importing Maven projects] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/cloud/spring-cloud-netflix-eureka-server/3.1.4/spring-cloud-netflix-eureka-server-3.1.4.pom
+2022-11-02 22:05:40,307 [Worker-3: Importing Maven projects] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/cloud/spring-cloud-netflix-eureka-server/3.1.4/spring-cloud-netflix-eureka-server-3.1.4.pom
+2022-11-02 22:05:40,493 [Worker-3: Importing Maven projects] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-web/2.7.3/spring-boot-starter-web-2.7.3.pom
+2022-11-02 22:05:40,724 [Worker-3: Importing Maven projects] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-web/2.7.3/spring-boot-starter-web-2.7.3.pom
+2022-11-02 22:05:40,960 [Worker-3: Importing Maven projects] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-tomcat/2.7.3/spring-boot-starter-tomcat-2.7.3.pom
+2022-11-02 22:05:41,204 [Worker-3: Importing Maven projects] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-tomcat/2.7.3/spring-boot-starter-tomcat-2.7.3.pom
+2022-11-02 22:05:41,383 [Worker-3: Importing Maven projects] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-webmvc/5.3.22/spring-webmvc-5.3.22.pom
+2022-11-02 22:05:41,601 [Worker-3: Importing Maven projects] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/spring-webmvc/5.3.22/spring-webmvc-5.3.22.pom
+2022-11-02 22:05:41,794 [Worker-3: Importing Maven projects] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-freemarker/2.7.3/spring-boot-starter-freemarker-2.7.3.pom
+2022-11-02 22:05:42,020 [Worker-3: Importing Maven projects] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-freemarker/2.7.3/spring-boot-starter-freemarker-2.7.3.pom
+2022-11-02 22:05:42,224 [Worker-3: Importing Maven projects] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-xml/2.13.3/jackson-dataformat-xml-2.13.3.pom
+2022-11-02 22:05:42,452 [Worker-3: Importing Maven projects] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-xml/2.13.3/jackson-dataformat-xml-2.13.3.pom
+2022-11-02 22:05:42,690 [AetherRepositoryConnector-repo.maven.apache.org-0-0] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/cloud/spring-cloud-starter-netflix-eureka-server/3.1.4/spring-cloud-starter-netflix-eureka-server-3.1.4.jar
+2022-11-02 22:05:42,865 [AetherRepositoryConnector-repo.maven.apache.org-0-2] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-web/2.7.3/spring-boot-starter-web-2.7.3.jar
+2022-11-02 22:05:42,865 [AetherRepositoryConnector-repo.maven.apache.org-0-3] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-tomcat/2.7.3/spring-boot-starter-tomcat-2.7.3.jar
+2022-11-02 22:05:42,888 [AetherRepositoryConnector-repo.maven.apache.org-0-4] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-webmvc/5.3.22/spring-webmvc-5.3.22.jar
+2022-11-02 22:05:42,919 [AetherRepositoryConnector-repo.maven.apache.org-0-1] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/cloud/spring-cloud-netflix-eureka-server/3.1.4/spring-cloud-netflix-eureka-server-3.1.4.jar
+2022-11-02 22:05:43,064 [AetherRepositoryConnector-repo.maven.apache.org-0-0] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/cloud/spring-cloud-starter-netflix-eureka-server/3.1.4/spring-cloud-starter-netflix-eureka-server-3.1.4.jar
+2022-11-02 22:05:43,421 [AetherRepositoryConnector-repo.maven.apache.org-0-0] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-freemarker/2.7.3/spring-boot-starter-freemarker-2.7.3.jar
+2022-11-02 22:05:43,433 [AetherRepositoryConnector-repo.maven.apache.org-0-2] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-web/2.7.3/spring-boot-starter-web-2.7.3.jar
+2022-11-02 22:05:43,437 [AetherRepositoryConnector-repo.maven.apache.org-0-3] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-tomcat/2.7.3/spring-boot-starter-tomcat-2.7.3.jar
+2022-11-02 22:05:44,185 [AetherRepositoryConnector-repo.maven.apache.org-0-2] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-xml/2.13.3/jackson-dataformat-xml-2.13.3.jar
+2022-11-02 22:05:44,212 [AetherRepositoryConnector-repo.maven.apache.org-0-0] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-freemarker/2.7.3/spring-boot-starter-freemarker-2.7.3.jar
+2022-11-02 22:05:44,856 [AetherRepositoryConnector-repo.maven.apache.org-0-2] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-xml/2.13.3/jackson-dataformat-xml-2.13.3.jar
+2022-11-02 22:05:44,856 [AetherRepositoryConnector-repo.maven.apache.org-0-1] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/cloud/spring-cloud-netflix-eureka-server/3.1.4/spring-cloud-netflix-eureka-server-3.1.4.jar
+2022-11-02 22:05:45,089 [AetherRepositoryConnector-repo.maven.apache.org-0-4] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/spring-webmvc/5.3.22/spring-webmvc-5.3.22.jar
+2022-11-02 22:05:45,208 [Worker-3: Importing Maven projects] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.gateway.app:ApiGatewayService:0.0.1-SNAPSHOT @ D:\Lijo-Learn\AWS-fullstack-training\lijo-master\FlightApp\BE\ApiGatewayService\pom.xml.
+2022-11-02 22:05:46,948 [Worker-3: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /FlightAdminService/src/main/java
+2022-11-02 22:05:46,949 [Worker-3: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /FlightAdminService/src/main/resources
+2022-11-02 22:05:46,957 [Worker-3: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /FlightAdminService/src/main/resources
+2022-11-02 22:05:46,965 [Worker-3: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /FlightAdminService/src/test/java
+2022-11-02 22:05:48,138 [Worker-3: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /FlightBookingService/src/main/java
+2022-11-02 22:05:48,139 [Worker-3: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /FlightBookingService/src/main/resources
+2022-11-02 22:05:48,141 [Worker-3: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /FlightBookingService/src/main/resources
+2022-11-02 22:05:48,145 [Worker-3: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /FlightBookingService/src/test/java
+2022-11-02 22:05:48,493 [Worker-19: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/cloud/spring-cloud-starter-netflix-eureka-server/3.1.4/spring-cloud-starter-netflix-eureka-server-3.1.4-sources.jar
+2022-11-02 22:05:48,499 [Worker-19: Download sources and javadoc] ERROR o.e.m.j.internal.DownloadSourcesJob - Could not download sources for org.springframework.cloud:spring-cloud-starter-netflix-eureka-server:3.1.4
+org.eclipse.core.runtime.CoreException: Could not resolve artifact org.springframework.cloud:spring-cloud-starter-netflix-eureka-server:jar:sources:3.1.4
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.lambda$4(MavenImpl.java:828)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:182)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:117)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:103)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.resolve(MavenImpl.java:796)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.resolve(MavenImpl.java:773)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.download(DownloadSourcesJob.java:311)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadAttachments(DownloadSourcesJob.java:285)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadMaven(DownloadSourcesJob.java:255)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadFilesAndPopulateToUpdate(DownloadSourcesJob.java:223)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.lambda$0(DownloadSourcesJob.java:152)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:182)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:156)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:103)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1416)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.run(DownloadSourcesJob.java:152)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+2022-11-02 22:05:48,532 [Worker-3: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Eureka/src/main/java
+2022-11-02 22:05:48,533 [Worker-3: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /Eureka/src/main/resources
+2022-11-02 22:05:48,537 [Worker-3: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /Eureka/src/main/resources
+2022-11-02 22:05:48,540 [Worker-3: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Eureka/src/test/java
+2022-11-02 22:05:49,268 [Worker-19: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/cloud/spring-cloud-netflix-eureka-server/3.1.4/spring-cloud-netflix-eureka-server-3.1.4-sources.jar
+2022-11-02 22:05:49,421 [Worker-3: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /spring-cloud-function-lamda/src/main/java
+2022-11-02 22:05:49,421 [Worker-3: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /spring-cloud-function-lamda/src/main/resources
+2022-11-02 22:05:49,425 [Worker-3: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /spring-cloud-function-lamda/src/main/resources
+2022-11-02 22:05:49,429 [Worker-3: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /spring-cloud-function-lamda/src/test/java
+2022-11-02 22:05:49,634 [Worker-3: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ApiGatewayService/src/main/java
+2022-11-02 22:05:49,634 [Worker-3: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ApiGatewayService/src/main/resources
+2022-11-02 22:05:49,639 [Worker-3: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ApiGatewayService/src/main/resources
+2022-11-02 22:05:49,643 [Worker-3: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ApiGatewayService/src/test/java
+2022-11-02 22:05:50,029 [Worker-3: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /FlightSearchService/src/main/java
+2022-11-02 22:05:50,029 [Worker-3: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /FlightSearchService/src/main/resources
+2022-11-02 22:05:50,033 [Worker-3: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /FlightSearchService/src/main/resources
+2022-11-02 22:05:50,037 [Worker-3: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /FlightSearchService/src/test/java
+2022-11-02 22:05:50,227 [Worker-19: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/cloud/spring-cloud-netflix-eureka-server/3.1.4/spring-cloud-netflix-eureka-server-3.1.4-sources.jar
+2022-11-02 22:05:50,229 [Worker-19: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for org.springframework.cloud:spring-cloud-netflix-eureka-server:3.1.4
+2022-11-02 22:05:50,365 [Worker-3: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /FlightUserService/src/main/java
+2022-11-02 22:05:50,366 [Worker-3: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /FlightUserService/src/main/resources
+2022-11-02 22:05:50,369 [Worker-3: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /FlightUserService/src/main/resources
+2022-11-02 22:05:50,373 [Worker-3: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /FlightUserService/src/test/java
+2022-11-02 22:05:50,599 [Worker-2: Launching Executing install in D__Lijo-Learn_AWS-fullstack-training_lijo-master_FlightApp_BE_ApiGatewayService] INFO  o.e.m.i.launch.MavenLaunchDelegate - D:\Lijo-Learn\AWS-fullstack-training\lijo-master\FlightApp\BE\ApiGatewayService
+2022-11-02 22:05:50,600 [Worker-2: Launching Executing install in D__Lijo-Learn_AWS-fullstack-training_lijo-master_FlightApp_BE_ApiGatewayService] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B install
+2022-11-02 22:05:50,744 [Worker-3: Importing Maven projects] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 7 project(s) in 15 sec
+2022-11-02 22:05:50,942 [Worker-19: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-web/2.7.3/spring-boot-starter-web-2.7.3-sources.jar
+2022-11-02 22:05:51,296 [Worker-19: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-web/2.7.3/spring-boot-starter-web-2.7.3-sources.jar
+2022-11-02 22:05:51,301 [Worker-19: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for org.springframework.boot:spring-boot-starter-web:2.7.3
+2022-11-02 22:05:52,102 [Worker-19: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-tomcat/2.7.3/spring-boot-starter-tomcat-2.7.3-sources.jar
+2022-11-02 22:05:52,558 [Worker-19: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-tomcat/2.7.3/spring-boot-starter-tomcat-2.7.3-sources.jar
+2022-11-02 22:05:52,562 [Worker-19: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for org.springframework.boot:spring-boot-starter-tomcat:2.7.3
+2022-11-02 22:05:53,412 [Worker-19: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-webmvc/5.3.22/spring-webmvc-5.3.22-sources.jar
+2022-11-02 22:05:54,590 [Worker-19: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/spring-webmvc/5.3.22/spring-webmvc-5.3.22-sources.jar
+2022-11-02 22:05:54,595 [Worker-19: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for org.springframework:spring-webmvc:5.3.22
+2022-11-02 22:05:55,530 [Worker-7: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-11-02 22:05:55,530 [Worker-7: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-11-02 22:05:55,564 [Worker-7: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-11-02 22:05:55,707 [Worker-7: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-02 22:05:55,758 [Worker-7: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-11-02 22:05:55,758 [Worker-7: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-11-02 22:05:55,758 [Worker-7: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\Lijo-Learn\AWS-fullstack-training\lijo-master\FlightApp\BE\ApiGatewayService\src\test\resources
+2022-11-02 22:05:56,051 [Worker-19: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-freemarker/2.7.3/spring-boot-starter-freemarker-2.7.3-sources.jar
+2022-11-02 22:05:56,315 [Worker-7: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-11-02 22:05:56,315 [Worker-7: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-11-02 22:05:56,318 [Worker-7: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-11-02 22:05:56,320 [Worker-7: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-02 22:05:56,334 [Worker-7: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-11-02 22:05:56,336 [Worker-7: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-11-02 22:05:56,337 [Worker-7: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\Lijo-Learn\AWS-fullstack-training\lijo-master\FlightApp\BE\Eureka\src\test\resources
+2022-11-02 22:05:56,425 [Worker-19: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-freemarker/2.7.3/spring-boot-starter-freemarker-2.7.3-sources.jar
+2022-11-02 22:05:56,436 [Worker-19: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for org.springframework.boot:spring-boot-starter-freemarker:2.7.3
+2022-11-02 22:05:57,209 [Worker-19: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-xml/2.13.3/jackson-dataformat-xml-2.13.3-sources.jar
+2022-11-02 22:05:57,678 [Worker-19: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-xml/2.13.3/jackson-dataformat-xml-2.13.3-sources.jar
+2022-11-02 22:05:57,688 [Worker-19: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.13.3
+2022-11-02 22:05:59,201 [Worker-7: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-11-02 22:05:59,202 [Worker-7: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-11-02 22:05:59,202 [Worker-7: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-11-02 22:05:59,206 [Worker-7: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-02 22:05:59,212 [Worker-7: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-11-02 22:05:59,212 [Worker-7: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-11-02 22:05:59,212 [Worker-7: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\Lijo-Learn\AWS-fullstack-training\lijo-master\FlightApp\BE\FlightAdminService\src\test\resources
+2022-11-02 22:05:59,877 [Worker-19: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/cloud/spring-cloud-starter-gateway/3.1.4/spring-cloud-starter-gateway-3.1.4-javadoc.jar
+2022-11-02 22:06:00,260 [Worker-19: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/cloud/spring-cloud-starter-gateway/3.1.4/spring-cloud-starter-gateway-3.1.4-javadoc.jar
+2022-11-02 22:06:00,265 [Worker-19: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded javadoc for org.springframework.cloud:spring-cloud-starter-gateway:3.1.4
+2022-11-02 22:06:01,643 [Worker-7: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-11-02 22:06:01,643 [Worker-7: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-11-02 22:06:01,647 [Worker-7: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-11-02 22:06:01,653 [Worker-7: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-02 22:06:01,657 [Worker-7: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-11-02 22:06:01,657 [Worker-7: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-11-02 22:06:01,658 [Worker-7: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\Lijo-Learn\AWS-fullstack-training\lijo-master\FlightApp\BE\FlightBookingService\src\test\resources
+2022-11-02 22:06:02,374 [Worker-19: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/io/netty/netty-resolver-dns-native-macos/4.1.79.Final/netty-resolver-dns-native-macos-4.1.79.Final-javadoc.jar
+2022-11-02 22:06:02,392 [Worker-19: Download sources and javadoc] ERROR o.e.m.j.internal.DownloadSourcesJob - Could not download javadoc for io.netty:netty-resolver-dns-native-macos:4.1.79.Final:osx-x86_64
+org.eclipse.core.runtime.CoreException: Could not resolve artifact io.netty:netty-resolver-dns-native-macos:jar:javadoc:4.1.79.Final
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.lambda$4(MavenImpl.java:828)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:182)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:117)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:103)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.resolve(MavenImpl.java:796)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.resolve(MavenImpl.java:773)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.download(DownloadSourcesJob.java:311)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadAttachments(DownloadSourcesJob.java:297)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadMaven(DownloadSourcesJob.java:255)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadFilesAndPopulateToUpdate(DownloadSourcesJob.java:223)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.lambda$0(DownloadSourcesJob.java:152)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:182)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:156)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:103)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1416)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.run(DownloadSourcesJob.java:152)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+2022-11-02 22:06:04,018 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-11-02 22:06:04,018 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-11-02 22:06:04,022 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-02 22:06:04,022 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-02 22:06:04,029 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-11-02 22:06:04,029 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-11-02 22:06:04,029 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\Lijo-Learn\AWS-fullstack-training\lijo-master\FlightApp\BE\ApiGatewayService\src\test\resources
+2022-11-02 22:06:04,062 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-11-02 22:06:04,062 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-11-02 22:06:04,062 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-02 22:06:04,063 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-02 22:06:04,068 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-11-02 22:06:04,068 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-11-02 22:06:04,068 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\Lijo-Learn\AWS-fullstack-training\lijo-master\FlightApp\BE\Eureka\src\test\resources
+2022-11-02 22:06:05,380 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-11-02 22:06:05,380 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-11-02 22:06:05,380 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-11-02 22:06:05,384 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-02 22:06:05,387 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-11-02 22:06:05,387 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-11-02 22:06:05,388 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\Lijo-Learn\AWS-fullstack-training\lijo-master\FlightApp\BE\FlightSearchService\src\test\resources
+2022-11-02 22:06:06,554 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-11-02 22:06:06,554 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-11-02 22:06:06,555 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-11-02 22:06:06,558 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-02 22:06:06,561 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-11-02 22:06:06,561 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-11-02 22:06:06,561 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\Lijo-Learn\AWS-fullstack-training\lijo-master\FlightApp\BE\FlightUserService\src\test\resources
+2022-11-02 22:06:07,189 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-11-02 22:06:07,189 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-11-02 22:06:07,189 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-11-02 22:06:07,191 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-02 22:06:07,194 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-11-02 22:06:07,195 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-11-02 22:06:07,195 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\Lijo-Learn\AWS-fullstack-training\lijo-master\FlightApp\BE\spring-cloud-function-lamda\src\test\resources
+2022-11-02 22:06:07,214 [Worker-1: Launching Executing install in D__Lijo-Learn_AWS-fullstack-training_lijo-master_FlightApp_BE_Eureka] INFO  o.e.m.i.launch.MavenLaunchDelegate - D:\Lijo-Learn\AWS-fullstack-training\lijo-master\FlightApp\BE\Eureka
+2022-11-02 22:06:07,214 [Worker-1: Launching Executing install in D__Lijo-Learn_AWS-fullstack-training_lijo-master_FlightApp_BE_Eureka] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B install
+2022-11-02 22:06:08,382 [Worker-19: Launching Executing install in D__Lijo-Learn_AWS-fullstack-training_lijo-master_FlightApp_BE_FlightAdminService] INFO  o.e.m.i.launch.MavenLaunchDelegate - D:\Lijo-Learn\AWS-fullstack-training\lijo-master\FlightApp\BE\FlightAdminService
+2022-11-02 22:06:08,383 [Worker-19: Launching Executing install in D__Lijo-Learn_AWS-fullstack-training_lijo-master_FlightApp_BE_FlightAdminService] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B install
+2022-11-02 22:06:23,808 [Worker-18: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-11-02 22:06:23,808 [Worker-18: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-11-02 22:06:23,808 [Worker-18: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-02 22:06:23,808 [Worker-18: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-02 22:06:23,811 [Worker-18: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-11-02 22:06:23,812 [Worker-18: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-11-02 22:06:23,812 [Worker-18: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\Lijo-Learn\AWS-fullstack-training\lijo-master\FlightApp\BE\ApiGatewayService\src\test\resources
+2022-11-02 22:06:25,571 [Worker-18: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-11-02 22:06:25,571 [Worker-18: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-11-02 22:06:25,571 [Worker-18: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-02 22:06:25,571 [Worker-18: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-02 22:06:25,575 [Worker-18: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-11-02 22:06:25,575 [Worker-18: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-11-02 22:06:25,575 [Worker-18: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\Lijo-Learn\AWS-fullstack-training\lijo-master\FlightApp\BE\Eureka\src\test\resources
+2022-11-02 22:06:26,747 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-11-02 22:06:26,747 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-11-02 22:06:26,747 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-02 22:06:26,748 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-02 22:06:26,751 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-11-02 22:06:26,751 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-11-02 22:06:26,751 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\Lijo-Learn\AWS-fullstack-training\lijo-master\FlightApp\BE\FlightAdminService\src\test\resources
+2022-11-02 22:06:26,975 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-11-02 22:06:26,976 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-11-02 22:06:26,976 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-02 22:06:26,976 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-02 22:06:26,979 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-11-02 22:06:26,979 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-11-02 22:06:26,979 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\Lijo-Learn\AWS-fullstack-training\lijo-master\FlightApp\BE\FlightBookingService\src\test\resources
+2022-11-02 22:06:28,006 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-11-02 22:06:28,007 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-11-02 22:06:28,007 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-02 22:06:28,007 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-02 22:06:28,010 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-11-02 22:06:28,010 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-11-02 22:06:28,010 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\Lijo-Learn\AWS-fullstack-training\lijo-master\FlightApp\BE\FlightSearchService\src\test\resources
+2022-11-02 22:06:28,953 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-11-02 22:06:28,954 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-11-02 22:06:28,954 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-02 22:06:28,954 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-02 22:06:28,958 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-11-02 22:06:28,958 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-11-02 22:06:28,958 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\Lijo-Learn\AWS-fullstack-training\lijo-master\FlightApp\BE\FlightUserService\src\test\resources
+2022-11-02 22:06:29,480 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-11-02 22:06:29,480 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-11-02 22:06:29,480 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-02 22:06:29,480 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-02 22:06:29,482 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-11-02 22:06:29,482 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-11-02 22:06:29,482 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\Lijo-Learn\AWS-fullstack-training\lijo-master\FlightApp\BE\spring-cloud-function-lamda\src\test\resources
+2022-11-02 22:06:29,493 [Worker-14: Launching Executing install in D__Lijo-Learn_AWS-fullstack-training_lijo-master_FlightApp_BE_FlightBookingService] INFO  o.e.m.i.launch.MavenLaunchDelegate - D:\Lijo-Learn\AWS-fullstack-training\lijo-master\FlightApp\BE\FlightBookingService
+2022-11-02 22:06:29,493 [Worker-14: Launching Executing install in D__Lijo-Learn_AWS-fullstack-training_lijo-master_FlightApp_BE_FlightBookingService] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B install
+2022-11-02 22:06:33,626 [Worker-7: Launching Executing install in D__Lijo-Learn_AWS-fullstack-training_lijo-master_FlightApp_BE_FlightSearchService] INFO  o.e.m.i.launch.MavenLaunchDelegate - D:\Lijo-Learn\AWS-fullstack-training\lijo-master\FlightApp\BE\FlightSearchService
+2022-11-02 22:06:33,626 [Worker-7: Launching Executing install in D__Lijo-Learn_AWS-fullstack-training_lijo-master_FlightApp_BE_FlightSearchService] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B install
+2022-11-02 22:06:42,946 [Worker-6: Launching Executing install in D__Lijo-Learn_AWS-fullstack-training_lijo-master_FlightApp_BE_FlightUserService] INFO  o.e.m.i.launch.MavenLaunchDelegate - D:\Lijo-Learn\AWS-fullstack-training\lijo-master\FlightApp\BE\FlightUserService
+2022-11-02 22:06:42,946 [Worker-6: Launching Executing install in D__Lijo-Learn_AWS-fullstack-training_lijo-master_FlightApp_BE_FlightUserService] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B install
+2022-11-02 22:06:56,522 [Worker-14: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/cloud/spring-cloud-starter-netflix-eureka-server/3.1.4/spring-cloud-starter-netflix-eureka-server-3.1.4-javadoc.jar
+2022-11-02 22:06:56,526 [Worker-14: Download sources and javadoc] ERROR o.e.m.j.internal.DownloadSourcesJob - Could not download javadoc for org.springframework.cloud:spring-cloud-starter-netflix-eureka-server:3.1.4
+org.eclipse.core.runtime.CoreException: Could not resolve artifact org.springframework.cloud:spring-cloud-starter-netflix-eureka-server:jar:javadoc:3.1.4
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.lambda$4(MavenImpl.java:828)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:182)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:117)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:103)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.resolve(MavenImpl.java:796)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.resolve(MavenImpl.java:773)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.download(DownloadSourcesJob.java:311)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadAttachments(DownloadSourcesJob.java:297)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadMaven(DownloadSourcesJob.java:255)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadFilesAndPopulateToUpdate(DownloadSourcesJob.java:223)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.lambda$0(DownloadSourcesJob.java:152)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:182)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:156)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:103)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1416)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.run(DownloadSourcesJob.java:152)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+2022-11-02 22:30:26,776 [Worker-29: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-11-02 22:30:26,776 [Worker-29: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-11-02 22:30:26,776 [Worker-29: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-02 22:30:26,776 [Worker-29: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-02 22:30:26,778 [Worker-29: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-11-02 22:30:26,779 [Worker-29: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-11-02 22:30:26,779 [Worker-29: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\Lijo-Learn\AWS-fullstack-training\lijo-master\FlightApp\BE\spring-cloud-function-lamda\src\test\resources
+2022-11-02 22:59:09,528 [Worker-41: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-11-02 22:59:09,536 [Worker-41: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-11-02 22:59:09,545 [Worker-41: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-11-02 22:59:09,762 [Worker-41: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-02 22:59:09,765 [Worker-41: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-11-02 22:59:09,766 [Worker-41: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-11-02 22:59:09,766 [Worker-41: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\Lijo-Learn\AWS-fullstack-training\lijo-master\FlightApp\BE\FlightAdminService\src\test\resources
+2022-11-02 22:59:50,696 [Worker-46: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-11-02 22:59:50,696 [Worker-46: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-11-02 22:59:50,697 [Worker-46: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-11-02 22:59:50,783 [Worker-46: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-02 22:59:50,786 [Worker-46: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-11-02 22:59:50,786 [Worker-46: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-11-02 22:59:50,786 [Worker-46: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\Lijo-Learn\AWS-fullstack-training\lijo-master\FlightApp\BE\FlightBookingService\src\test\resources
+2022-11-02 23:00:00,054 [Worker-49: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-11-02 23:00:00,054 [Worker-49: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-11-02 23:00:00,054 [Worker-49: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-11-02 23:00:00,065 [Worker-49: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-02 23:00:00,066 [Worker-49: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-11-02 23:00:00,067 [Worker-49: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-11-02 23:00:00,067 [Worker-49: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\Lijo-Learn\AWS-fullstack-training\lijo-master\FlightApp\BE\FlightSearchService\src\test\resources
+2022-11-02 23:00:12,180 [Worker-47: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-11-02 23:00:12,180 [Worker-47: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-11-02 23:00:12,180 [Worker-47: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-11-02 23:00:12,190 [Worker-47: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-02 23:00:12,193 [Worker-47: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-11-02 23:00:12,193 [Worker-47: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-11-02 23:00:12,193 [Worker-47: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\Lijo-Learn\AWS-fullstack-training\lijo-master\FlightApp\BE\FlightUserService\src\test\resources
+2022-11-03 12:09:21,486 [Worker-171: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-11-03 12:09:21,487 [Worker-171: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-11-03 12:09:21,488 [Worker-171: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-03 12:09:21,488 [Worker-171: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-03 12:09:21,492 [Worker-171: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-11-03 12:09:21,492 [Worker-171: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-11-03 12:09:21,492 [Worker-171: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\Lijo-Learn\AWS-fullstack-training\lijo-master\FlightApp\BE\ApiGatewayService\src\test\resources
+2022-11-03 12:09:22,744 [Worker-171: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-11-03 12:09:22,744 [Worker-171: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-11-03 12:09:22,745 [Worker-171: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-03 12:09:22,745 [Worker-171: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-03 12:09:22,754 [Worker-171: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-11-03 12:09:22,754 [Worker-171: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-11-03 12:09:22,755 [Worker-171: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\Lijo-Learn\AWS-fullstack-training\lijo-master\FlightApp\BE\Eureka\src\test\resources
+2022-11-03 12:09:24,750 [Worker-171: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-11-03 12:09:24,751 [Worker-171: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-11-03 12:09:24,751 [Worker-171: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-03 12:09:24,751 [Worker-171: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-03 12:09:24,754 [Worker-171: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-11-03 12:09:24,755 [Worker-171: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-11-03 12:09:24,755 [Worker-171: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\Lijo-Learn\AWS-fullstack-training\lijo-master\FlightApp\BE\FlightAdminService\src\test\resources
+2022-11-03 12:09:25,259 [Worker-171: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-11-03 12:09:25,260 [Worker-171: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-11-03 12:09:25,260 [Worker-171: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-03 12:09:25,260 [Worker-171: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-03 12:09:25,263 [Worker-171: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-11-03 12:09:25,263 [Worker-171: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-11-03 12:09:25,263 [Worker-171: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\Lijo-Learn\AWS-fullstack-training\lijo-master\FlightApp\BE\FlightBookingService\src\test\resources
+2022-11-03 12:09:25,293 [Worker-171: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-11-03 12:09:25,293 [Worker-171: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-11-03 12:09:25,293 [Worker-171: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-03 12:09:25,293 [Worker-171: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-03 12:09:25,296 [Worker-171: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-11-03 12:09:25,296 [Worker-171: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-11-03 12:09:25,296 [Worker-171: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\Lijo-Learn\AWS-fullstack-training\lijo-master\FlightApp\BE\FlightSearchService\src\test\resources
+2022-11-03 12:09:25,835 [Worker-171: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-11-03 12:09:25,835 [Worker-171: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-11-03 12:09:25,835 [Worker-171: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-03 12:09:25,835 [Worker-171: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-03 12:09:25,837 [Worker-171: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-11-03 12:09:25,837 [Worker-171: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-11-03 12:09:25,837 [Worker-171: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\Lijo-Learn\AWS-fullstack-training\lijo-master\FlightApp\BE\FlightUserService\src\test\resources
+2022-11-03 12:09:26,211 [Worker-171: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-11-03 12:09:26,211 [Worker-171: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-11-03 12:09:26,211 [Worker-171: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-03 12:09:26,212 [Worker-171: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-03 12:09:26,215 [Worker-171: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-11-03 12:09:26,215 [Worker-171: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-11-03 12:09:26,215 [Worker-171: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\Lijo-Learn\AWS-fullstack-training\lijo-master\FlightApp\BE\spring-cloud-function-lamda\src\test\resources

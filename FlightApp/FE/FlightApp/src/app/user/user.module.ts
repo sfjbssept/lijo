@@ -3,18 +3,23 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatNativeDateModule } from '@angular/material/core';
 import { Routes, RouterModule } from '@angular/router';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgxMatTimepickerModule } from 'ngx-mat-timepicker';
 import { AngularMaterialModule } from '../AngularMaterialModule';
 import { PassengerComponent } from './passenger/passenger.component';
+import { PassengerDataComponent } from './passenger-data/passenger-data.component';
+import { faStackOverflow } from '@fortawesome/free-brands-svg-icons';
+import { faCoffee, faFilm, faTrash, faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 
 const routes: Routes = [
-  {path:'passenger' ,component:PassengerComponent}
+  {path:'passenger' ,component:PassengerComponent},
+  {path:'passenger/data',component: PassengerDataComponent}
 ]
 
 @NgModule({
   declarations: [
-    PassengerComponent
+    PassengerComponent,
+    PassengerDataComponent
   ],
   imports: [
     FormsModule,
@@ -27,4 +32,14 @@ const routes: Routes = [
     ReactiveFormsModule
   ]
 })
-export class UserModule { }
+export class UserModule { 
+  constructor(library: FaIconLibrary) {
+    library.addIcons(
+      faCoffee,
+      faStackOverflow,
+      faFilm,
+      faTrash,
+      faPenToSquare
+    );
+  }
+}
