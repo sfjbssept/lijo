@@ -19,5 +19,6 @@ export class Passenger{
       this.idCardNo = undefined;
       this.name = undefined;
       this.phone = undefined;
+      this.gender = 'Male';
     }
 }

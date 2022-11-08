@@ -2,7 +2,7 @@
     <div class="card  div-card">
         <div class="card-body ">
             <div class="col">
-                <h4 class="flightFont">Flight List</h4>
+                <h4 class="flightFont">Passengers List</h4>
             </div>
             <div class="col">
                 <nav aria-label="...">
@@ -26,25 +26,29 @@
                     <thead>
                         <tr>
                             <th scope="col">#</th>
-                            <th scope="col">Flight Code</th>
-                            <th scope="col">aircraftModel</th>
-                            <th scope="col">Seat Count</th>
-                            <th scope="col">Status</th>
-                            <th scope="col">Internationl</th>
-                            <th scope="col">Domestic</th>
-                            <th scope="col"></th>
-                            <th scope="col"></th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Dob</th>
+                            <th scope="col">Age</th>
+                            <!-- <th scope="col">Address</th> -->
+                            <!-- <th scope="col">Id Card Type</th>
+                            <th scope="col">Id Card Number</th> -->
+                            <th scope="col">Gender</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Phone</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let item of flights;let i = index">
+                        <tr *ngFor="let item of passengers;let i = index">
                             <th scope="row">{{i+1}}</th>
-                            <td>{{item.flightCode}}</td>
-                            <td>{{item.aircraftModel}}</td>
-                            <td>{{item.flightRowCount}}</td>
-                            <td>{{item.status}}</td>
-                            <td>{{(item.internationalService=='1')?'YES': 'NO'}}</td>
-                            <td>{{item.domesticService=='1'?'YES':'NO'}}</td>
+                            <td>{{item.name}}</td>
+                            <td>{{item.dob | date}}</td>
+                            <td>{{item.age}}</td>
+                            <!-- <td>{{item.address}}</td> -->
+                            <!-- <td>{{item.idCardNo}}</td>
+                            <td>{{item.idCardNo}}</td> -->
+                            <td>{{item.gender}}</td>
+                            <td>{{item.email}}</td>
+                            <td>{{item.phone}}</td>
                             <td><Button class="btn btn-primary" >
                                     <fa-icon icon="pen-to-square"></fa-icon>
                                 </Button></td>

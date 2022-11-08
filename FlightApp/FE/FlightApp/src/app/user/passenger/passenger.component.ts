@@ -10,7 +10,7 @@ import { UserService } from '../user.service';
   styleUrls: ['./passenger.component.css']
 })
 export class PassengerComponent implements OnInit {
-
+  @ViewChild('form') form: any;
   dobCtrl: FormControl = new FormControl("");
   isUpdate =false;
   minDate  = new Date(1900, 0, 1);
@@ -26,14 +26,15 @@ export class PassengerComponent implements OnInit {
   onSubmit() {
     this.passenger.userId = 1;
     this.userService.savePassenger(this.passenger).subscribe({
-     next:(data)=> {
-      console.log(data);
+     next:(data: any)=> {
+      this.successMessage = data.message;
+      this.form.reset();
+
      },
      error: ()=> {
-      console.log("error");
+      this.errorMessage = "Error occured Please try again ";
      }
     })
-   console.log(this.passenger);
   }
   openFromIcon(timepicker: { open: () => void }) {
     if (!this.dobCtrl.disabled) {

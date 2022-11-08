@@ -1,5 +1,7 @@
 package com.flightapp.user.service.impl;
 
+import java.util.List;
+
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -32,11 +34,12 @@ public class UserServiceImpl implements UserService {
 	}
 	
 	@Override
-	public Passenger addPassenger(PassengerDto passengerDto) {
+	public Integer addPassenger(PassengerDto passengerDto) {
 		Passenger p = mapper.map(passengerDto, Passenger.class);
 		userDataRepo.findById(p.getUserId()).orElseThrow(()->
-		new ResourceNotFoundException("id","Flight",p.getUserId()));
-		return PassengerRepo.save(p);
+		new ResourceNotFoundException("id","User",p.getUserId()));
+		Passenger passenger =  PassengerRepo.save(p);
+		return passenger.getId();
 	}
 
 	@Override
@@ -44,4 +47,11 @@ public class UserServiceImpl implements UserService {
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public List<Passenger> getPassengersData(Integer userId) {
+		// TODO Auto-generated method stub
+		return PassengerRepo.findByUserId(userId);
+	}
+	
 }

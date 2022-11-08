@@ -13,4 +13,7 @@ export class UserService {
   {
     return this.httpClient.post(this.rootURL+'user/passenger',value,{responseType:'json'})
   }
+  getAllPassengers(userId: number){
+    return this.httpClient.get(this.rootURL+'user/passengers/'+userId);
+  }
 }

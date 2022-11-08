@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminService } from 'src/app/admin/admin.service';
 import { Flight } from 'src/app/flight/flight';
+import { Passenger } from '../passenger';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-passenger-data',
@@ -9,21 +11,20 @@ import { Flight } from 'src/app/flight/flight';
 })
 export class PassengerDataComponent implements OnInit {
 
-  constructor(public adminService: AdminService) { }
-  flights : Flight[];
+  constructor(public userService: UserService) { }
+  passengers : Passenger[];
   ngOnInit(): void {
-    this.getAllFlights();
+    this.getAllPassengers();
   }
 
-  getAllFlights(){
-    this.adminService.getFligths().subscribe({
+  getAllPassengers(){
+    this.userService.getAllPassengers(1).subscribe({
       next: data => {
-      this.flights =data as Flight[];
+      this.passengers =data as Passenger[];
       },
       error: e => {
         console.log(e);
       }
     })
   }
-
 }
