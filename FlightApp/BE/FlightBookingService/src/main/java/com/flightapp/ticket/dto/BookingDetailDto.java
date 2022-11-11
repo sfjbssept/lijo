@@ -1,6 +1,7 @@
 package com.flightapp.ticket.dto;
 
 import java.sql.Timestamp;
+import java.util.Set;
 
 import lombok.Data;
 
@@ -10,4 +11,6 @@ public class BookingDetailDto {
 	private String pnr;
 	private Timestamp bookingDate;
 	private Integer flightScheduleId;
+	private Set<TicketDetailDto> ticketDetail;
+
 }

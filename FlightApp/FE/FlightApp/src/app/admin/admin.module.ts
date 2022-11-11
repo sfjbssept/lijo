@@ -12,6 +12,7 @@ import { faStackOverflow } from '@fortawesome/free-brands-svg-icons';
 import { AngularMaterialModule } from '../AngularMaterialModule';
 import { MatNativeDateModule } from '@angular/material/core';
 import { NgxMatTimepickerModule } from 'ngx-mat-timepicker';
+import { TicketBookingComponent } from '../ticket-booking/ticket-booking.component';
 
 const routes: Routes = [
   {path:'', component: AdminComponent},

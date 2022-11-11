@@ -35,3 +35,6 @@ th,td {
     border-color: #BCBCBC;
     word-wrap: break-word;
 }
+.rd_only{
+    background-color: lightgray !important;
+}

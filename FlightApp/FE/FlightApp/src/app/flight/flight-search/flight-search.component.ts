@@ -4,6 +4,7 @@ import * as moment from 'moment';
 import { FlightService } from '../flight.service';
 import { FlightSchedule } from '../flightSchedule';
 import { formatDate } from "@angular/common";
+import { ActivatedRoute, Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-flight-search',
@@ -17,7 +18,7 @@ export class FlightSearchComponent implements OnInit {
   destination: any = 'LONDON' ;
   depDate: any = moment().format("MM/DD/yyyy");
   depDate1 = new FormControl((new Date()).toISOString());
-  constructor(public flightService : FlightService ) { }
+  constructor(public flightService : FlightService ,private router: Router ) { }
 
   ngOnInit(): void {
    console.log(this.depDate);
@@ -37,6 +38,10 @@ calculateDuration(flightSchedule:FlightSchedule){
       },     // nextHandler
     });
 
+  }
+  onBooking(flightSchedule: FlightSchedule){
+    localStorage.setItem('flightschedule',JSON.stringify(flightSchedule));
+    this.router.navigate(['/booking']);
   }
 }
 

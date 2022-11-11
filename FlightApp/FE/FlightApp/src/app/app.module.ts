@@ -14,12 +14,14 @@ import {MatIconModule} from '@angular/material/icon';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/compiler';
 import { AngularMaterialModule } from './AngularMaterialModule';
 import { SharedModule } from './shared/shared.module';
+import { TicketBookingComponent } from './ticket-booking/ticket-booking.component';
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     FlightSearchComponent,
-    FlightComponent
+    FlightComponent,
+    TicketBookingComponent
   ],
   imports: [
     BrowserModule,
