@@ -1,5 +1,6 @@
 package com.flightapp.ticket.entity;
 
+import java.io.Serializable;
 import java.sql.Timestamp;
 import java.util.Set;
 
@@ -13,6 +14,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -20,10 +23,13 @@ import lombok.Setter;
 @Getter
 @Setter
 @Table( name = "tb_booking_detail")
-public class BookingDetail {
+public class BookingDetail implements Serializable{
+
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@JsonIgnore
 	private Integer id;
 	
 	@Column(name = "pnr_no")

@@ -1,12 +1,15 @@
 <div class="container div-bg">
     <div class="card  div-card">
-        <!-- <div class="alert alert-danger" role="alert" *ngIf="errorMessage">
+        <div class="alert alert-danger" role="alert" *ngIf="errorMessage">
             {{errorMessage}}
         </div>
         <div class="alert alert-success" role="alert" *ngIf="successMessage">
-            {{successMessage}}
-        </div> -->
-        <div class="card-body ">
+            {{successMessage}} {{bookingResponse.pnrNumber}}
+        </div>
+        <div class="card-body " *ngIf="successMessage">
+            <button class="primary btn">View Ticket</button>
+        </div>
+        <div class="card-body " *ngIf="!successMessage">
             <h3 class="flightFont">Book Ticket</h3>
             <div class="form-row row">
                 <div class="form-group col-md-6 ">
@@ -28,7 +31,7 @@
             </div>
             <div class="form-row row">
                 <div class="form-group col-md-6">
-                    <label for="model">Departure Tim{{flightSchedule.departureTime| date}}e</label>
+                    <label for="model">Departure Time</label>
                     <!-- ngmodel pipe integration -->
                     <input type="text" class="form-control rd_only" readonly
                         [ngModel]="flightSchedule.departureTime | date:'medium' " name="departureTime"
@@ -41,89 +44,66 @@
                         aria-label="Arrival time" #arrivalTime="ngModel">
                 </div>
             </div>
+            <div class="form-row row" *ngIf="flightCost">
+                <div class="form-group col-md-6">
+                    <label for="model">Flight Cost</label>
+                    <span class="price-span form-control">{{flightCost| currency:"INR":"symbol"}}</span>
+                </div>
+            </div>
             <!-- ********** Reactive Form **********  -->
             <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                <br>
+                <h3>Passengers</h3>
+                <div formArrayName='ticketDetail'>
+                    <div *ngFor="let item of ticketDetails.controls;let i=index" [formGroupName]="i">
+                        <div class="card  div-card-small shadow p-3 mb-5 bg-body rounded">
+                            <div class="card-body ">
+                                <div class="form-row row">
+                                    <div class="form-group col-md-6">
+                                        <label for="airLine">Passenger</label>
+                                        <select class="form-control" formControlName="passengerId"
+                                            [ngClass]="{'has-danger': item.get('passengerId').invalid && ( item.get('passengerId').dirty ||  item.get('passengerId').touched)}">
+                                            <option *ngFor="let passenger of passengers" [value]="passenger.id">
+                                                {{passenger.name}}</option>
+                                        </select>
+                                    </div>
 
-                <div class="form-row row">
-                    <div class="form-group col-md-6">
-                        <label for="airLine">Meal Type</label>
-                        <select class="form-control" formControlName="mealType" 
-                            [ngClass]="{'has-danger': form.get('mealType').invalid && ( form.get('mealType').dirty ||  form.get('mealType').touched)}">
-                            <option  value="veg">Veg</option>
-                            <option  value="nonVeg">nonVeg</option>
-                        </select>
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="airLine">Flight Type</label>
-                        <select class="form-control" formControlName="flightClass" 
-                            [ngClass]="{'has-danger': form.get('flightClass').invalid && ( form.get('flightClass').dirty ||  form.get('flightClass').touched)}">
-                            <option  value="business">BusinessClass</option>
-                            <option  value="economy">EconomyClass</option>
-                        </select>
+                                    <!-- <div class="form-group col-md-6">
+                                <label for="airLine">Gender</label>
+                                <input type="text" class="form-control rd_only" readonly
+                                [ngModel]="flightSchedule.departureTime | date:'medium' " name="departureTime"
+                                aria-label="Departure Date" #departureTime="ngModel">
+                            </div> -->
+                                </div>
+                                <div class="form-row row">
+                                    <div class="form-group col-md-6">
+                                        <label for="airLine">Meal Type</label>
+                                        <select class="form-control" formControlName="mealType"
+                                            [ngClass]="{'has-danger': item.get('mealType').invalid && ( item.get('mealType').dirty ||  item.get('mealType').touched)}">
+                                            <option value="veg">Veg</option>
+                                            <option value="nonVeg">nonVeg</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="airLine">Flight Type</label>
+                                        <select class="form-control" formControlName="flightClass"
+                                            (change)="onChange(item)"
+                                            [ngClass]="{'has-danger': item.get('flightClass').invalid && ( item.get('flightClass').dirty ||  item.get('flightClass').touched)}">
+                                            <option value="business">BusinessClass</option>
+                                            <option value="economy">EconomyClass</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <a href="#" class="card-link"><fa-icon icon="trash"></fa-icon></a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <!-- <div class="form-row row">
-                    <div class="form-group col-md-6">
-                        <label for="model">Departure Time</label>
-                        <mat-form-field class="form-control">
-                            <input type="text" matInput [matDatepicker]="picker"
-                                [(ngModel)]="flightSchedule.departureTime" name="departureTime"
-                                aria-label="Departure Date">
-                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                            <mat-datepicker #picker (closed)="onClose(timepicker,false)"></mat-datepicker>
-                        </mat-form-field>
-                        <button class="btn btn-primary" type="" hidden [ngxMatTimepicker]="timepicker" [format]="24"
-                            [required]="required" readonly [formControl]="departureTimeCtrl"></button>
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="model">Arrival Time</label>
-                        <mat-form-field class="form-control">
-                            <input type="text" matInput [matDatepicker]="picker2"
-                                [(ngModel)]="flightSchedule.arrivalTime" name="arrivalTime" aria-label="Arrival time">
-                            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
-                            <mat-datepicker #picker2 (closed)="onClose(timepicker2,true)"></mat-datepicker>
-                        </mat-form-field>
-                        <button class="btn btn-primary" type="" hidden [ngxMatTimepicker]="timepicker2" [format]="24"
-                            [required]="required" readonly [formControl]="arrivalTimeCtrl"></button>
-                    </div>
-                </div> -->
-                <!-- <div class="form-row row">
-                    <div class="form-group col-md-6">
-                        <label for="flightDuration">Flight duration </label>
-                        <label class="form-control"> {{flightSchedule.flightDuration | date:"HH'h':mm'm'"}}</label>
-                        <!-- <input type="text" class="form-control" id="flightDuration" required
-                            [(ngModel)]="flightSchedule.flightDuration | date: HH'h':mm'm'" name="gateNumber" aria-describedby="FlightDuration"
-                            placeholder="Enter flight Duration"
-                            [ngClass]="{'has-danger': flightDuration.invalid && (flightDuration.dirty || flightDuration.touched)}"
-                            #flightDuration="ngModel"> 
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="gateNumber">GateNumber</label>
-                        <input type="text" class="form-control" id="gateNumber" required
-                            [(ngModel)]="flightSchedule.gateNumber" name="gateNumber" aria-describedby="GateNumber"
-                            placeholder="Enter gateNumber"
-                            [ngClass]="{'has-danger': gateNumber.invalid && (gateNumber.dirty || gateNumber.touched)}"
-                            #gateNumber="ngModel">
-                    </div>
-                </div> -->
-                <!-- <div class=" form-row row">
-                    <div class="form-group col-md-6">
-                        <label for="businessClassCost">Business class Ticket Cost</label>
-                        <input type="number" class="form-control" id="businessClassCost" required
-                            [(ngModel)]="flightSchedule.businessClassCost" name="businessClassCost"
-                            aria-describedby="BusinessClassCost" placeholder="Enter businessClass Cost"
-                            [ngClass]="{'has-danger': businessClassCost.invalid && (businessClassCost.dirty || businessClassCost.touched)}"
-                            #businessClassCost="ngModel">
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="gateNumber">EconomyClass Ticket Cost</label>
-                        <input type="number" class="form-control" id="economyClassCost" required
-                            [(ngModel)]="flightSchedule.economyClassCost" name="economyClassCost"
-                            aria-describedby="EconomyClassCost" placeholder="Enter EconomyClass Cost"
-                            [ngClass]="{'has-danger': economyClassCost.invalid && (economyClassCost.dirty || economyClassCost.touched)}"
-                            #economyClassCost="ngModel">
-                    </div>
-                </div> -->
+                <br>
+                <button class="btn btn-success" type="button" mat-raised-button color="primary" (click)="addPassenger()">Add
+                    addPassenger</button>
+                <br>
                 <br>
                 <div class=" form-row row">
                     <div class="col-md-1">

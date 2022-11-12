@@ -24,4 +24,6 @@ public class FlightScheduleDto {
 	private float economyClassCost;
 	
 	private Integer flightId;
+	
+	private Integer id;
 }

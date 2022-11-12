@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.flightapp.ticket.dto.BookingDetailDto;
+import com.flightapp.ticket.dto.BookingResponse;
 import com.flightapp.ticket.service.BookingService;
 
 @RestController
@@ -21,7 +22,8 @@ public class TicketBookingController extends BaseController{
 	public ResponseEntity<?> bookTicket(@RequestBody BookingDetailDto bookingDetailDto) {
 		
 		String pnrNumber =  bookingService.bookingTicket(bookingDetailDto);
-		return buildResponseMessage(HttpStatus.OK, "Ticket booked with PNR number: "+pnrNumber);
+		BookingResponse bookingResponse = new BookingResponse(pnrNumber,"Ticket booked successfully");
+		return buildResponseMessage(HttpStatus.OK, bookingResponse);
 		
 	}
 }

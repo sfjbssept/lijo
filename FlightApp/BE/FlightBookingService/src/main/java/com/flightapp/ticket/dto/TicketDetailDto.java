@@ -15,4 +15,6 @@ private String flightClass;
 	
 	private String status;
 	
+	private Integer id;
+	
 }

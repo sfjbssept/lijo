@@ -10,6 +10,7 @@ export class Passenger{
     dob: Date;
     phone: number;
     email:string;
+    id: number;
     constructor(){
       this.passportNo = undefined;
       this.address =undefined;

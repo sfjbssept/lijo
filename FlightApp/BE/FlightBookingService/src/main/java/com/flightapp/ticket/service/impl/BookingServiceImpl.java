@@ -24,6 +24,7 @@ public class BookingServiceImpl implements BookingService{
 	@Override
 	public String bookingTicket(BookingDetailDto bookingDetailDto) {
 		try {
+			
 			BookingDetail bookingDetail = mapDtoToEntity(bookingDetailDto, BookingDetail.class);
 			bookingDetail.setPnr( generatePnrNumber(bookingDetail));
 				bookingDetail = bookingDetailRepo.save(bookingDetail);
@@ -45,8 +46,8 @@ public class BookingServiceImpl implements BookingService{
 	}
 
 	private String generatePnrNumber(BookingDetail bookingDetail) {
-		Integer maxTicketID = bookingDetailRepo.findMaxId();
-		String randomString = RandomStringUtils.randomAlphanumeric(4);
-		return randomString.concat(maxTicketID.toString());
+	    Integer maxTicketID = bookingDetailRepo.findMaxId();
+		String randomString = RandomStringUtils.randomAlphanumeric(4).toUpperCase();
+		return randomString.concat(maxTicketID!=null?maxTicketID.toString(): "1");
 	}
 }

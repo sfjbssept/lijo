@@ -3,13 +3,14 @@ import { Time } from "@angular/common";
 export class FlightSchedule {
      sourceLocation!: string;
      destination!: string;
-     departureTime!:Date
-     arrivalTime!:Date
+     departureTime!:Date;
+     arrivalTime!:Date;
      flightDuration!: number;
      gateNumber!: string;
-     economyClassCost: string;
-     businessClassCost: string
-     flightId: string
+     economyClassCost: number;
+     businessClassCost: number;
+     flightId: string;
+     id: number;
      constructor(){
           this.arrivalTime = undefined;
           this.businessClassCost = undefined;

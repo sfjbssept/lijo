@@ -8,6 +8,7 @@ import lombok.Data;
 @Data
 public class BookingDetailDto {
 
+	private Integer id;
 	private String pnr;
 	private Timestamp bookingDate;
 	private Integer flightScheduleId;

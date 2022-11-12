@@ -1,21 +1,32 @@
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatNativeDateModule } from '@angular/material/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatNativeDateModule} from '@angular/material/core'; 
-import { HttpClientModule } from '@angular/common/http';
+import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faStackOverflow } from '@fortawesome/free-brands-svg-icons';
+import { faCoffee, faFilm, faTrash, faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 import { AngularMaterialModule } from '../AngularMaterialModule';
-import { BrowserModule } from '@angular/platform-browser';
-import { CommonModule } from '@angular/common';
 
 
 @NgModule({
   declarations: [],
   imports: [
+    FontAwesomeModule
   ],
   exports:[
-    BrowserAnimationsModule,
+    FontAwesomeModule,
     MatNativeDateModule,
     AngularMaterialModule,
+    BrowserAnimationsModule
   ]
 })
-export class SharedModule { }
+export class SharedModule { 
+  constructor(library: FaIconLibrary) {
+    library.addIcons(
+      faCoffee,
+      faStackOverflow,
+      faFilm,
+      faTrash,
+      faPenToSquare,
+    );
+  }
+}

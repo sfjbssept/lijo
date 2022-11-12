@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminService } from 'src/app/admin/admin.service';
-import { Flight } from 'src/app/flight/flight';
 import { Passenger } from '../passenger';
 import { UserService } from '../user.service';
 
