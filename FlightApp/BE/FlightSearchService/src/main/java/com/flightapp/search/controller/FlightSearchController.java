@@ -7,10 +7,12 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.flightapp.search.dto.FlightDataDto;
 import com.flightapp.search.dto.FlightScheduleDto;
 import com.flightapp.search.service.FlightSerchService;
 
@@ -26,4 +28,10 @@ public class FlightSearchController {
 		return new ResponseEntity<List<FlightScheduleDto>>(list, HttpStatus.OK);
 		
 	}
+	@GetMapping("/flight/Data/{flightScheduleId}")
+	public FlightDataDto getFlightData(@PathVariable Integer flightScheduleId) {
+		return new FlightDataDto();
+		
+	}
+	
 }

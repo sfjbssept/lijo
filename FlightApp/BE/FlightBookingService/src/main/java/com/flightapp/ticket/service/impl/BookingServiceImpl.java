@@ -6,7 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.flightapp.ticket.dto.BookingDetailDto;
+import com.flightapp.ticket.dto.PnrDataResponse;
 import com.flightapp.ticket.entity.BookingDetail;
+import com.flightapp.ticket.exception.ResourceNotFoundException;
+import com.flightapp.ticket.feign.FlightClient;
 import com.flightapp.ticket.repo.BookingDetailRepo;
 import com.flightapp.ticket.repo.TicketDetailRepo;
 import com.flightapp.ticket.service.BookingService;
@@ -20,6 +23,9 @@ public class BookingServiceImpl implements BookingService{
 	
 	@Autowired
 	TicketDetailRepo ticketDetailRepo;
+	
+	@Autowired
+	FlightClient flightClient;
 	
 	@Override
 	public String bookingTicket(BookingDetailDto bookingDetailDto) {
@@ -49,5 +55,18 @@ public class BookingServiceImpl implements BookingService{
 	    Integer maxTicketID = bookingDetailRepo.findMaxId();
 		String randomString = RandomStringUtils.randomAlphanumeric(4).toUpperCase();
 		return randomString.concat(maxTicketID!=null?maxTicketID.toString(): "1");
+	}
+
+	@Override
+	public PnrDataResponse getPnrData(String pnrNumber) {
+		bookingDetailRepo.findByPnr(pnrNumber).orElseThrow(()->
+		new ResourceNotFoundException("PNR","PnrNumber",pnrNumber));
+		try {
+			flightClient.getFlightData(123);
+		} catch (Exception e) {
+			System.out.print("ff");
+		}
+		return null;
+		
 	}
 }
