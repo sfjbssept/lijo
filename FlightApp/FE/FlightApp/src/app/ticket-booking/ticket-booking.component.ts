@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Route, Router } from '@angular/router';
 import { FlightSchedule } from '../flight/flightSchedule';
 import { Passenger } from '../user/passenger';
 import { UserService } from '../user/user.service';
@@ -14,13 +15,15 @@ export class TicketBookingComponent implements OnInit {
   errorMessage ="";
   successMessage ="";
   flightCost: number;
+  pnrNumber: string;
   form: FormGroup;
   bookingResponse: any;
   passengers: Passenger[];
   flightSchedule: FlightSchedule;
   constructor(private fb: FormBuilder, 
               private bookingService: BookingService,
-              private userService: UserService) { }
+              private userService: UserService,
+              private route: Router) { }
 
   ngOnInit(): void {
     this.resetMessages();
@@ -41,6 +44,7 @@ export class TicketBookingComponent implements OnInit {
       next:(data: any)=>{
         console.log(data);
         this.bookingResponse = data.data;
+        this.pnrNumber =this.bookingResponse.pnrNumber;
         this.successMessage = data.data.message;
       },
       error:(e)=>{
@@ -89,6 +93,9 @@ export class TicketBookingComponent implements OnInit {
         break;
     } 
    this.calculateFlightCost();
+}
+onViewTicket(){
+  this.route.navigate(['/pnr/'+this.pnrNumber]);
 }
 calculateFlightCost(){
   this.flightCost = 0;

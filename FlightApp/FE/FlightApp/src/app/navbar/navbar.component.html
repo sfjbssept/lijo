@@ -15,6 +15,9 @@
                 <li class="nav-item">
                     <a class="nav-link" routerLinkActive="flightFont" [routerLink]="['/flight']" aria-current="page" href="#" > <span >Flights</span> </a>
                 </li>
+                <li class="nav-item">
+                  <a class="nav-link" routerLinkActive="flightFont" [routerLink]="['/pnr']" aria-current="page" href="#" > <span >Pnr Search</span> </a>
+                </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" routerLinkActive="flightFont" [routerLink]="['/admin']" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       Admin
@@ -35,19 +38,11 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                       <a class="dropdown-item" [routerLink]="['/user/passenger']" href="#">Add Passenger</a>
                       <a class="dropdown-item" [routerLink]="['/user/passenger/data']" href="#">Passengers</a>
-                      <!-- <a class="dropdown-item" [routerLink]="['/admin/flight']" href="#">Flight</a>
-                      <a class="dropdown-item" [routerLink]="['/admin/flight/schedule']" href="#">Flight Schedule</a> -->
-                      <!-- <a class="dropdown-item" href="#">Another action</a>
-                      <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Something else here</a> -->
                     </div>
                   </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Pricing</a>
-                </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link disabled">Disabled</a>
-                </li>
+                </li> -->
             </ul>
         </div>
     </div>

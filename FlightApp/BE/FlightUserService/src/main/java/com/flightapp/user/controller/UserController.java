@@ -51,4 +51,9 @@ public class UserController  extends BaseController{
 		return userService.getPassengersData(userId);
 		
 	}
+	@GetMapping(value = "passenger/{id}")
+	public PassengerDto getPassenger(@PathVariable Integer id) {
+		return userService.getPassengerData(id);
+		
+	}
 }

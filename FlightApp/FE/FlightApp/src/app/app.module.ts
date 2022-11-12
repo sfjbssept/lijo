@@ -15,13 +15,15 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/compiler';
 import { AngularMaterialModule } from './AngularMaterialModule';
 import { SharedModule } from './shared/shared.module';
 import { TicketBookingComponent } from './ticket-booking/ticket-booking.component';
+import { PnrSearchComponent } from './pnr-search/pnr-search.component';
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     FlightSearchComponent,
     FlightComponent,
-    TicketBookingComponent
+    TicketBookingComponent,
+    PnrSearchComponent
   ],
   imports: [
     BrowserModule,

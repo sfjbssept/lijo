@@ -1,0 +1,89 @@
+<div class="container">
+    <div class="alert alert-danger" role="alert" *ngIf="errorMessage">
+        {{errorMessage}}
+    </div>
+    <div class="alert alert-success" role="alert" *ngIf="successMessage">
+        {{successMessage}}
+    </div>
+    <br>
+    <div class="card shadow p-3 mb-5 bg-body rounded">
+        <div class="card-body-small">
+            <div class="row">
+                <div class="col">
+                    <input type="text" class="form-control" [(ngModel)]="pnr">
+                </div>
+                <div class="col pd-top-2">
+                    <button type="submit" (click)="getTicketDetailsByPnr(pnr)" class="btn btn-primary">View Ticket</button>
+                  </div>
+              </div>
+        </div>
+    </div>
+    <div *ngIf="pnrData">
+        <div class="row justify-content-center" *ngFor="let item of pnrData.bookingDetailDto.ticketDetail">
+            <div class="col-md-7">
+                <div class="card shadow p-3 mb-5 bg-body rounded">
+                    <div class="card-body-small">
+                        <div class="row">
+                            <div class="col-6 col-md-2 align-self-start">
+                                <img *ngIf="getPassengerGender(item.passengerId)==='male'" class="profile-image"
+                                    src="assets/images/img_avatar.png" alt="">
+                                <img *ngIf="getPassengerGender(item.passengerId)==='female'" class="profile-image"
+                                    src="assets/images/female.png" alt="">
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <span class="font-bold">{{getPassengerName(item.passengerId)}}</span>
+                                <p>Passenger ({{getPassengerAge(item.passengerId)}})</p>
+                            </div>
+                            <div class="col-md-3"></div>
+                            <div class="col-12 col-md-4 align-self-center">
+                                <span class="font-small">#PNR: </span><span
+                                    class="font-small font-bold">{{pnr}}</span><br>
+                                <span class="font-small">#TicketNo:</span><span class=" font-small font-bold">
+                                    {{item.id}}</span>
+                            </div>
+                        </div>
+                        <div class="row shadow-none p-3 mb-5 bg-light rounded">
+                            <div class="col-md-4 col-12 justify-content-center">
+                                <span class="font-bold">{{pnrData.flightDataDto.sourceLocation}}</span>
+                                <p>{{pnrData.flightDataDto.departureTime | date:"yyyy-MM-dd HH:mm"}}</p>
+                            </div>
+                            <div class="col-md-4 col-12">
+                                <img class="flight-image" src="assets/images/icons8-plane-96.png" alt="">
+                            </div>
+                            <div class="col-md-4 col-12">
+                                <span class="font-bold">{{pnrData.flightDataDto.destination}}</span>
+                                <p>{{pnrData.flightDataDto.arrivalTime | date:"yyyy-MM-dd HH:mm"}}</p>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-12 col-md-2">
+                                <span>Gate</span>
+                                <p class="font-bold">GA2</p>
+                            </div>
+                            <div class="col-12 col-md-2">
+                                <span>Flight</span>
+                                <p class="font-bold">RD56</p>
+                            </div>
+                            <div class="col-12 col-md-2">
+                                <span>Airline</span>
+                                <p class="font-bold">AirIndia</p>
+                            </div>
+                            <div class="col-12 col-md-2">
+                                <span>Class</span>
+                                <p class="font-bold">{{item.flightClass}}</p>
+                            </div>
+                            <div class="col-12 col-md-3">
+                                <span>Cost</span>
+                                <p class="font-bold">{{item.ticketCost | currency:'INR'}}</p>
+                            </div>
+                            <!-- <p>GATE</p>
+                    <p>SEAT</p>
+                    <p>FLightNumber</p>
+                    <p>class</p> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

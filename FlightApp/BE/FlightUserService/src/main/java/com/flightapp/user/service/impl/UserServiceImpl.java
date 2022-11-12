@@ -22,7 +22,7 @@ public class UserServiceImpl implements UserService {
 	private UserDataRepo userDataRepo;
 	
 	@Autowired
-	private  PassengerRepo PassengerRepo;
+	private  PassengerRepo passengerRepo;
 	
 	ModelMapper mapper = new ModelMapper();
 	
@@ -38,7 +38,7 @@ public class UserServiceImpl implements UserService {
 		Passenger p = mapper.map(passengerDto, Passenger.class);
 		userDataRepo.findById(p.getUserId()).orElseThrow(()->
 		new ResourceNotFoundException("id","User",p.getUserId()));
-		Passenger passenger =  PassengerRepo.save(p);
+		Passenger passenger =  passengerRepo.save(p);
 		return passenger.getId();
 	}
 
@@ -51,7 +51,14 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public List<Passenger> getPassengersData(Integer userId) {
 		// TODO Auto-generated method stub
-		return PassengerRepo.findByUserId(userId);
+		return passengerRepo.findByUserId(userId);
+	}
+
+	@Override
+	public PassengerDto getPassengerData(Integer id) {
+		Passenger passenger =  passengerRepo.findById(id).orElseThrow(()->
+		new ResourceNotFoundException("id","Passenger",id));
+		return mapper.map(passenger, PassengerDto.class);
 	}
 	
 }

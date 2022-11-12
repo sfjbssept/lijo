@@ -17,4 +17,6 @@ public interface UserService {
 
 	List<Passenger> getPassengersData(Integer userId);
 
+	PassengerDto getPassengerData(Integer id);
+
 }

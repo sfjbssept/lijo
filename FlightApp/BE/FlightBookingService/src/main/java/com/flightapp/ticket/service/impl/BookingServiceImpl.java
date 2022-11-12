@@ -1,5 +1,8 @@
 package com.flightapp.ticket.service.impl;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.apache.commons.lang.RandomStringUtils;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,10 +10,12 @@ import org.springframework.stereotype.Service;
 
 import com.flightapp.ticket.dto.BookingDetailDto;
 import com.flightapp.ticket.dto.FlightDataDto;
+import com.flightapp.ticket.dto.PassengerDto;
 import com.flightapp.ticket.dto.PnrDataResponse;
 import com.flightapp.ticket.entity.BookingDetail;
 import com.flightapp.ticket.exception.ResourceNotFoundException;
 import com.flightapp.ticket.feign.FlightClient;
+import com.flightapp.ticket.feign.UserClient;
 import com.flightapp.ticket.repo.BookingDetailRepo;
 import com.flightapp.ticket.repo.TicketDetailRepo;
 import com.flightapp.ticket.service.BookingService;
@@ -27,6 +32,9 @@ public class BookingServiceImpl implements BookingService{
 	
 	@Autowired
 	FlightClient flightClient;
+	
+	@Autowired
+	UserClient userClient;
 	
 	@Override
 	public String bookingTicket(BookingDetailDto bookingDetailDto) {
@@ -61,13 +69,22 @@ public class BookingServiceImpl implements BookingService{
 	@Override
 	public PnrDataResponse getPnrData(String pnrNumber) {
 		PnrDataResponse pnrDataResponse = new PnrDataResponse();
+		List<PassengerDto> list = new ArrayList();
 		BookingDetail bookingDetail=bookingDetailRepo.findByPnr(pnrNumber).orElseThrow(()->
 		new ResourceNotFoundException("PNR","PnrNumber",pnrNumber));
 		BookingDetailDto bookingDetailDto = mapper.map(bookingDetail, BookingDetailDto.class);
 		pnrDataResponse.setBookingDetailDto(bookingDetailDto);
 		try {
-		FlightDataDto flightDataDto = 	flightClient.getFlightData(1);
+		FlightDataDto flightDataDto = 	flightClient.getFlightData(bookingDetailDto.getFlightScheduleId());
 		pnrDataResponse.setFlightDataDto(flightDataDto);
+		} catch (Exception e) {
+			new ResourceNotFoundException("PNR",e.getMessage()+ " PnrNumber",pnrNumber);
+		}
+		try {
+			bookingDetail.getTicketDetail().forEach(item->{
+				list.add(userClient.getPassengerData(item.getPassengerId()));
+			});
+			pnrDataResponse.setPassengerDtoList(list);
 		} catch (Exception e) {
 			new ResourceNotFoundException("PNR",e.getMessage()+ " PnrNumber",pnrNumber);
 		}
