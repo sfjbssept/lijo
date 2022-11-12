@@ -12,7 +12,9 @@ import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.flightapp.search.dao.repo.AirlineRepo;
 import com.flightapp.search.dao.repo.FlightScheduleRep;
+import com.flightapp.search.dto.FlightDataDto;
 import com.flightapp.search.dto.FlightScheduleDto;
 import com.flightapp.search.entity.FlightSchedule;
 import com.flightapp.search.service.FlightSerchService;
@@ -22,6 +24,9 @@ public class FlightSearchServiceImpl implements FlightSerchService {
 
 	@Autowired
 	FlightScheduleRep flightScheduleRep;
+	
+	@Autowired
+	AirlineRepo airlineRepo;
 	
 	ModelMapper mapper = new  ModelMapper();  
 	
@@ -46,6 +51,12 @@ public class FlightSearchServiceImpl implements FlightSerchService {
      List<FlightSchedule> flightSchedule =  flightScheduleRep.searchFlightSchedule(from.toUpperCase(),to.toUpperCase(),timestamp);
 		
 		return mapper.map(flightSchedule, new TypeToken<List<FlightScheduleDto>>() {}.getType());
+	}
+
+
+	@Override
+	public FlightDataDto getFlightData(Integer flightScheduleId) {
+			return airlineRepo.getFlightData(flightScheduleId);
 	}
 
 

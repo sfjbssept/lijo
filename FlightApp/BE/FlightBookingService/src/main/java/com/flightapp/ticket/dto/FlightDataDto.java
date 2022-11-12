@@ -22,4 +22,6 @@ public class FlightDataDto {
 	private String flightCode;
 	
 	private String airlineName;
+	
+	private String aircraftModel;
 }

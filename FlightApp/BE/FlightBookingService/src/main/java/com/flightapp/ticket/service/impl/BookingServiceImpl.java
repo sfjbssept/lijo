@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.flightapp.ticket.dto.BookingDetailDto;
+import com.flightapp.ticket.dto.FlightDataDto;
 import com.flightapp.ticket.dto.PnrDataResponse;
 import com.flightapp.ticket.entity.BookingDetail;
 import com.flightapp.ticket.exception.ResourceNotFoundException;
@@ -59,14 +60,18 @@ public class BookingServiceImpl implements BookingService{
 
 	@Override
 	public PnrDataResponse getPnrData(String pnrNumber) {
-		bookingDetailRepo.findByPnr(pnrNumber).orElseThrow(()->
+		PnrDataResponse pnrDataResponse = new PnrDataResponse();
+		BookingDetail bookingDetail=bookingDetailRepo.findByPnr(pnrNumber).orElseThrow(()->
 		new ResourceNotFoundException("PNR","PnrNumber",pnrNumber));
+		BookingDetailDto bookingDetailDto = mapper.map(bookingDetail, BookingDetailDto.class);
+		pnrDataResponse.setBookingDetailDto(bookingDetailDto);
 		try {
-			flightClient.getFlightData(123);
+		FlightDataDto flightDataDto = 	flightClient.getFlightData(1);
+		pnrDataResponse.setFlightDataDto(flightDataDto);
 		} catch (Exception e) {
-			System.out.print("ff");
+			new ResourceNotFoundException("PNR",e.getMessage()+ " PnrNumber",pnrNumber);
 		}
-		return null;
+		return pnrDataResponse;
 		
 	}
 }

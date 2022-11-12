@@ -2,24 +2,23 @@ package com.flightapp.search.dto;
 
 import java.sql.Timestamp;
 
-import lombok.Data;
-
-@Data
-public class FlightDataDto {
+public interface FlightDataDto {
 	
-	private String sourceLocation;
+	String getSourceLocation();
 	
-	private String destination;
+	 String getDestination();
 	
-	private Timestamp departureTime;
+	 Timestamp getDepartureTime();
 	
-	private Timestamp arrivalTime;
+	 Timestamp getArrivalTime();
 	
-	private Integer flightDuration;
+	 Integer getFlightDuration();
 	
-	private String gateNumber;
+	 String getGateNumber();
 	
-	private String flightCode;
+	 String getFlightCode();
 	
-	private String airlineName;
+	 String getAirlineName();
+	
+	 String getAircraftModel();
 }

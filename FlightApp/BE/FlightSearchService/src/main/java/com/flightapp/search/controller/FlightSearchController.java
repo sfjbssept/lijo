@@ -30,7 +30,7 @@ public class FlightSearchController {
 	}
 	@GetMapping("/flight/Data/{flightScheduleId}")
 	public FlightDataDto getFlightData(@PathVariable Integer flightScheduleId) {
-		return new FlightDataDto();
+		return flightSerchService.getFlightData(flightScheduleId);
 		
 	}
 	
