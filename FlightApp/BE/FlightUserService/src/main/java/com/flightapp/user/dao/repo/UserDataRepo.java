@@ -6,4 +6,6 @@ import com.flightapp.user.dao.entity.UserData;
 
 public interface UserDataRepo extends JpaRepository<UserData, Integer> {
 
+	UserData findByUsername(String username);
+
 }

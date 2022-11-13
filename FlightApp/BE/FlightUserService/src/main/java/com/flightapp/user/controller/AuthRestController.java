@@ -1,25 +1,25 @@
 package com.flightapp.user.controller;
 
+import org.apache.http.auth.AuthenticationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.flightapp.user.util.JwtUtil;
+import com.flightapp.user.dto.AuthData;
+import com.flightapp.user.service.AuthService;
 
-import io.swagger.v3.oas.annotations.parameters.RequestBody;
 
 @RestController
 public class AuthRestController {
 
 	@Autowired
-	private JwtUtil jwtUtil;
-
+	AuthService authService;
 	@PostMapping("/auth/login")
-	public ResponseEntity<String> login(@RequestBody String userName) {
-		String token = jwtUtil.generateToken(userName);
-
+	public ResponseEntity<String> login(@RequestBody AuthData authData) throws AuthenticationException {
+		String token = authService.login(authData);
 		return new ResponseEntity<String>(token, HttpStatus.OK);
 	}
 
