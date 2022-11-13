@@ -10,7 +10,10 @@ spring:
     username: root
     password: root
   
-  
+jwt:
+  secret: secretkey
+  token:
+    validity: 300000
 #actuator
 management:
   endpoints:

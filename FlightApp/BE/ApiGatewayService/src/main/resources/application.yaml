@@ -20,6 +20,7 @@ spring:
           - Path=/flight-user-service/**
           filters:
           - StripPrefix=1
+          - JwtAuthenticationFilter
         # Flight search  service
         - id: FLIGHT-SEARCH-SERVICE
           uri: lb://FLIGHT-SEARCH-SERVICE
@@ -27,13 +28,14 @@ spring:
           - Path=/flight-search-service/**
           filters:
           - StripPrefix=1
+          - JwtAuthenticationFilter
          # Flight booking  service
         - id: FLIGHT-BOOKING-SERVICE
           uri: lb://FLIGHT-BOOKING-SERVICE
           predicates:
           - Path=/flight-booking-service/**
           filters:
-          - StripPrefix=1
+          - JwtAuthenticationFilter
       #You can configure the gateway to control CORS behavior. The “global” CORS configuration is a map of URL patterns to Spring Framework CorsConfiguration.
       #https://docs.spring.io/spring-cloud-gateway/docs/current/reference/html/#cors-configuration
       globalcors:
@@ -50,6 +52,13 @@ spring:
 server:
   port: 8090
 
+jwt:
+  secret: secretkey
+  token:
+    validity: 300000
+  
+#ignore null fields in json
+#spring.jackson.default-property-inclusion=NON_NULL
 eureka:
   client:
     service-url:

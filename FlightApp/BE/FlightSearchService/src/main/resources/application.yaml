@@ -13,7 +13,6 @@ spring:
     url: jdbc:mysql://localhost:3307/flight_db?useSSL=false
     username: root
     password: root
-
     
 #actuator
 management:
