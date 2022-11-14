@@ -8,14 +8,10 @@ import { FlightSearchComponent } from './flight/flight-search/flight-search.comp
 import { FlightComponent } from './flight/flight.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatNativeDateModule} from '@angular/material/core';
-import {MatIconModule} from '@angular/material/icon';
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/compiler';
-import { AngularMaterialModule } from './AngularMaterialModule';
 import { SharedModule } from './shared/shared.module';
 import { TicketBookingComponent } from './ticket-booking/ticket-booking.component';
 import { PnrSearchComponent } from './pnr-search/pnr-search.component';
+import { AuthComponent } from './auth/auth.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +19,8 @@ import { PnrSearchComponent } from './pnr-search/pnr-search.component';
     FlightSearchComponent,
     FlightComponent,
     TicketBookingComponent,
-    PnrSearchComponent
+    PnrSearchComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,

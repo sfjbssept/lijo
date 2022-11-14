@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.flightapp.user.dto.AuthData;
+import com.flightapp.user.dto.TokenData;
 import com.flightapp.user.service.AuthService;
 
 
@@ -18,9 +19,13 @@ public class AuthRestController {
 	@Autowired
 	AuthService authService;
 	@PostMapping("/auth/login")
-	public ResponseEntity<String> login(@RequestBody AuthData authData) throws AuthenticationException {
-		String token = authService.login(authData);
-		return new ResponseEntity<String>(token, HttpStatus.OK);
+	public ResponseEntity<?> login(@RequestBody AuthData authData) throws AuthenticationException {
+		try {
+			TokenData token = authService.login(authData);
+			return new ResponseEntity<TokenData>(token, HttpStatus.OK);
+		} catch (Exception e) {
+			return new ResponseEntity<String>("Failed to login", HttpStatus.UNAUTHORIZED); 
+		} 
 	}
 
 	@PostMapping("/auth/register")

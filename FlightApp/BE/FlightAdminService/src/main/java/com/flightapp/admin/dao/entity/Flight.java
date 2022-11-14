@@ -45,6 +45,7 @@ public class Flight implements Serializable {
 	@JoinColumn(name = "airline_id", nullable = false)
 	@JsonIgnore
 	private Airline airline;
+	
 	@Column(name ="airline_id" ,insertable = false,updatable = false)
 	private Integer airlineId;
 	

@@ -28,7 +28,6 @@ spring:
           - Path=/flight-search-service/**
           filters:
           - StripPrefix=1
-          - JwtAuthenticationFilter
          # Flight booking  service
         - id: FLIGHT-BOOKING-SERVICE
           uri: lb://FLIGHT-BOOKING-SERVICE

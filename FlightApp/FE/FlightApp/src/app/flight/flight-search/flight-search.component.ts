@@ -14,6 +14,8 @@ import { ActivatedRoute, Route, Router } from '@angular/router';
 export class FlightSearchComponent implements OnInit {
 
   flightSchedules!: FlightSchedule[];
+  errorMessage ="";
+  successMessage ="";
   source: any ='GOA';
   destination: any = 'LONDON' ;
   depDate: any = moment().format("MM/DD/yyyy");
@@ -21,6 +23,7 @@ export class FlightSearchComponent implements OnInit {
   constructor(public flightService : FlightService ,private router: Router ) { }
 
   ngOnInit(): void {
+   this.successMessage = this.errorMessage ='';
    console.log(this.depDate);
 }
 calculateDuration(flightSchedule:FlightSchedule){
@@ -28,14 +31,16 @@ calculateDuration(flightSchedule:FlightSchedule){
       return new Date(flightSchedule.departureTime).getTime()- new Date(flightSchedule.arrivalTime).getTime();
   }
   searchFlights(){
+    this.successMessage = this.errorMessage ='';
     console.log(this.depDate);
     console.log(this.depDate1.value);
     this.flightService.searchFlight(this.source,this.destination, formatDate(this.depDate1.value, 'yyyy-MM-dd', 'en-US')).subscribe({
-      error: (e) => { console.log("error"+e)},    // errorHandler 
+      error: (e) => { 
+        this.errorMessage = e.error.error+ ' Please try after sometime';
+      },
       next: (d) => { 
         this.flightSchedules =d as FlightSchedule[];
-
-      },     // nextHandler
+      },
     });
 
   }

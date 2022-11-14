@@ -1,32 +1,40 @@
 <div class="card">
-    <div class="card-body">
-        <div class="row">
-            <div class="col pd-top-2">
-              <input type="text" class="form-control"  [(ngModel)]="source" placeholder="From" aria-label="Enter city or Airport">
-            </div>
-            <div class="col pd-top-2">
-              <input type="text" class="form-control"  [(ngModel)]="destination" placeholder="TO" aria-label="Enter city or Airport">
-            </div>
-            <div class="col datepick" >
-              <mat-form-field>
-              <input type="text" matInput  [matDatepicker]="picker" [formControl]="depDate1" aria-label="Departure Date"> 
-                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                <mat-datepicker #picker   ></mat-datepicker>
-              </mat-form-field>
-            </div>
-            <div class="col pd-top-2">
-                <button type="submit" (click)="searchFlights()" class="btn btn-primary">Search Flights</button>
-              </div>
-          </div>
+  <div class="card-body">
+    <div class="alert alert-danger" role="alert" *ngIf="errorMessage">
+      {{errorMessage}}
     </div>
+    <div class="alert alert-success" role="alert" *ngIf="successMessage">
+      {{successMessage}}
+    </div>
+    <div class="row">
+      <div class="col pd-top-2">
+        <input type="text" class="form-control" [(ngModel)]="source" placeholder="From"
+          aria-label="Enter city or Airport">
+      </div>
+      <div class="col pd-top-2">
+        <input type="text" class="form-control" [(ngModel)]="destination" placeholder="TO"
+          aria-label="Enter city or Airport">
+      </div>
+      <div class="col datepick">
+        <mat-form-field>
+          <input type="text" matInput [matDatepicker]="picker" [formControl]="depDate1" aria-label="Departure Date">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div class="col pd-top-2">
+        <button type="submit" (click)="searchFlights()" class="btn btn-primary">Search Flights</button>
+      </div>
+    </div>
+  </div>
 </div>
-<div class="card flight-schedule"  *ngIf="flightSchedules && flightSchedules.length==0">
+<div class="card flight-schedule" *ngIf="flightSchedules && flightSchedules.length==0">
   <div class="card-body">
     No Data found
   </div>
 </div>
 <div class="card flight-schedule" *ngFor="let item of flightSchedules">
-  <div class="card-body"  >
+  <div class="card-body">
     <div class="row row-cols-1">
       <div class="col">Air Asia</div>
     </div>
@@ -37,23 +45,23 @@
       <div class="col-2"></div>
       <div class="col-2">{{item.destination}}</div>
       <div class="col-6"></div>
-        
+
     </div>
     <div class="row">
       <div class="col-2">
-       <span class="flight-time">{{item.departureTime | date:"HH:mm"}}</span> 
+        <span class="flight-time">{{item.departureTime | date:"HH:mm"}}</span>
       </div>
       <div class="col-2">
         {{calculateDuration(item) | date:"HH'h':mm'm'"}}
       </div>
       <div class="col-4">
-       <span  class="flight-time">{{item.arrivalTime | date:"HH:mm"}}</span> 
+        <span class="flight-time">{{item.arrivalTime | date:"HH:mm"}}</span>
       </div>
       <div class="col-2">
-       <span class="flight-price">{{ item.economyClassCost | currency:'INR': 'symbol':'1.0-0'}}</span> 
+        <span class="flight-price">{{ item.economyClassCost | currency:'INR': 'symbol':'1.0-0'}}</span>
       </div>
       <div class="col-2">
         <button class="flight-btn" (click)="onBooking(item)"><span class="flight-book">Book</span></button>
       </div>
     </div>
-</div>
+  </div>

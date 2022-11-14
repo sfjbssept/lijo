@@ -19,5 +19,6 @@ public class PassengerDto {
 	private Date dob;
 	private Long phone;
 	private String email;
+	private String userType;
 	
 }

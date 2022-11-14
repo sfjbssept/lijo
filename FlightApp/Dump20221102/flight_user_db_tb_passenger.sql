@@ -1,10 +1,10 @@
 CREATE DATABASE  IF NOT EXISTS `flight_user_db` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `flight_user_db`;
--- MySQL dump 10.13  Distrib 8.0.30, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.31, for Win64 (x86_64)
 --
 -- Host: localhost    Database: flight_user_db
 -- ------------------------------------------------------
--- Server version	8.0.30
+-- Server version	8.0.31
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -37,6 +37,7 @@ CREATE TABLE `tb_passenger` (
   `dob` date DEFAULT NULL,
   `phone` bigint DEFAULT NULL,
   `email` varchar(45) NOT NULL,
+  `user_type` varchar(45) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `user_id_idx` (`user_id`),
   CONSTRAINT `user_id` FOREIGN KEY (`user_id`) REFERENCES `tb_user` (`id`) ON UPDATE SET NULL
@@ -49,7 +50,7 @@ CREATE TABLE `tb_passenger` (
 
 LOCK TABLES `tb_passenger` WRITE;
 /*!40000 ALTER TABLE `tb_passenger` DISABLE KEYS */;
-INSERT INTO `tb_passenger` VALUES (1,1,'Anugi Aleena Tom','mananthavady','U8774521','32376632737238','AadharCard','FeMale',31,'1990-12-21',8056894018,'ANugi@gmail.com'),(2,1,'lijo joseph','mananthavady','K8774541','32376632737238','AadharCard','Male',32,'1990-02-06',8056894,'lijo.8893@gmail.com');
+INSERT INTO `tb_passenger` VALUES (1,1,'Anugi Aleena Tom','mananthavady','U8774521','32376632737238','AadharCard','female',31,'1990-12-21',8056894018,'ANugi@gmail.com','secondary'),(2,1,'lijo joseph','mananthavady','K8774541','32376632737238','AadharCard','male',32,'1990-02-06',8056894,'lijo.8893@gmail.com','primary');
 /*!40000 ALTER TABLE `tb_passenger` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -62,4 +63,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-11-02 16:53:08
+-- Dump completed on 2022-11-14 20:02:34

@@ -34,6 +34,10 @@ public class JwtUtil {
 		}
 		return null;
 	}
+	public Date getExpirationDate(final String token) {
+		return Jwts.parser().setSigningKey(jwtSecret).parseClaimsJws(token).getBody().getExpiration();
+		
+	}
 
 	public String generateToken(String id) {
 		Claims claims = Jwts.claims().setSubject(id);

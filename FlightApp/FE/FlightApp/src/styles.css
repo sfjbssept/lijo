@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 body{
-    background-color: #ebcd34;
+    background-color: #ebcd34 !important;
 }
 @font-face {
     font-family: 'Quicksand_Dash';
@@ -12,7 +12,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     border: red 1px solid !important;
 }
 .flightFont{
-    font-weight: bold; color: #eb8034;
+    font-weight: bold !important; color: #eb8034 !important;
 }
 .div-card{
     padding: 5%;
@@ -29,7 +29,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     /* border: rgb(90, 64, 240) 1px solid !important; */
 }
 .div-bg{
-    background-color: rgb(225, 231, 238);
+    /* background-color: rgb(225, 231, 238); */
     width: 100%;
     padding: 2%;
 }

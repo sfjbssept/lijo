@@ -5,7 +5,7 @@ import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontaweso
 import { faStackOverflow } from '@fortawesome/free-brands-svg-icons';
 import { faCoffee, faFilm, faTrash, faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 import { AngularMaterialModule } from '../AngularMaterialModule';
-
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [],
@@ -15,6 +15,7 @@ import { AngularMaterialModule } from '../AngularMaterialModule';
   exports:[
     FontAwesomeModule,
     MatNativeDateModule,
+    MatCardModule,
     AngularMaterialModule,
     BrowserAnimationsModule
   ]
