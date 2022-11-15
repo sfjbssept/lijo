@@ -1,4 +1,4 @@
-  spring:
+spring:
   application:
     name: api-gateway-service
     
@@ -13,6 +13,7 @@
           - Path=/flight-admin-service/**
           filters:
           - StripPrefix=1
+          - JwtAuthenticationFilter
         # Flight user  service
         - id: FLIGHT-USER-SERVICE
           uri: lb://FLIGHT-USER-SERVICE
@@ -34,6 +35,7 @@
           predicates:
           - Path=/flight-booking-service/**
           filters:
+          - StripPrefix=1
           - JwtAuthenticationFilter
       #You can configure the gateway to control CORS behavior. The “global” CORS configuration is a map of URL patterns to Spring Framework CorsConfiguration.
       #https://docs.spring.io/spring-cloud-gateway/docs/current/reference/html/#cors-configuration

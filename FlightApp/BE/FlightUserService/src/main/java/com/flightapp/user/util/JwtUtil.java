@@ -39,9 +39,9 @@ public class JwtUtil {
 		
 	}
 
-	public String generateToken(String id) {
+	public String generateToken(String id, String role) {
 		Claims claims = Jwts.claims().setSubject(id);
-		claims.put("role", "admin");
+		claims.put("role", role);
 		long nowMillis = System.currentTimeMillis();
 		long expMillis = nowMillis + tokenValidity;
 		Date exp = new Date(expMillis);

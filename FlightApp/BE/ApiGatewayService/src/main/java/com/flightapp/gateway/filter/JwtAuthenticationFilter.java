@@ -32,7 +32,7 @@ public class JwtAuthenticationFilter extends AbstractGatewayFilterFactory<JwtAut
 	public GatewayFilter apply(Config config) {
 		return (exchange, chain) -> {
 			ServerHttpRequest request = (ServerHttpRequest) exchange.getRequest();
-			final List<String> apiEndpoints = List.of("/register", "/login");
+			final List<String> apiEndpoints = List.of("/register", "/login","/pnr");
 
 			Predicate<ServerHttpRequest> isApiSecured = r -> apiEndpoints.stream()
 					.noneMatch(uri -> r.getURI().getPath().contains(uri));

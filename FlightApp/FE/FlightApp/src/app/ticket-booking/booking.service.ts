@@ -8,7 +8,7 @@ export class BookingService {
   rootURL = 'http://localhost:8090/flight-booking-service/booking';
   constructor(private httpCLient: HttpClient) { }
   bookTicket(value: any){
-    return this.httpCLient.post(this.rootURL, value,{responseType:'json'});
+    return this.httpCLient.post(this.rootURL+'/user', value,{responseType:'json'});
   }
   getTicketDetailsByPnrNumber(pnrNumber:string) {
     return this.httpCLient.get(this.rootURL+'/pnr/'+pnrNumber);

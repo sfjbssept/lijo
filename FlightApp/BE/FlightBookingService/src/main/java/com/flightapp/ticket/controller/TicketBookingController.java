@@ -21,7 +21,7 @@ public class TicketBookingController extends BaseController{
 
 	@Autowired
 	BookingService bookingService;
-	@PostMapping
+	@PostMapping(value =  "user")
 	public ResponseEntity<?> bookTicket(@RequestBody BookingDetailDto bookingDetailDto) {
 		
 		String pnrNumber =  bookingService.bookingTicket(bookingDetailDto);

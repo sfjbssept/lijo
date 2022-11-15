@@ -35,11 +35,17 @@ public class UserServiceImpl implements UserService {
 	
 	@Override
 	public Integer addPassenger(PassengerDto passengerDto) {
-		Passenger p = mapper.map(passengerDto, Passenger.class);
-		userDataRepo.findById(p.getUserId()).orElseThrow(()->
-		new ResourceNotFoundException("id","User",p.getUserId()));
-		Passenger passenger =  passengerRepo.save(p);
+		UserData userData =  userDataRepo.findById(passengerDto.getUserId()).orElseThrow(()->
+		new ResourceNotFoundException("id","User",passengerDto.getUserId()));
+		Passenger passenger = mapToEntity(passengerDto, userData);
+		passenger =  passengerRepo.save(passenger);
 		return passenger.getId();
+	}
+
+	private Passenger mapToEntity(PassengerDto passengerDto, UserData userData) {
+		Passenger passenger = mapper.map(passengerDto, Passenger.class);
+		passenger.setUserData(userData);
+		return passenger;
 	}
 
 	@Override

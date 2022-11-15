@@ -28,7 +28,7 @@ public class AuthServiceImpl implements AuthService{
 	public TokenData login(AuthData authData) {
 		UserData userData=userDataRepo.findByUsername(authData.getUsername());
 		if(isPasswordMatch(userData.getPassword(), authData.getPassword())) {
-		String token = jwtUtil.generateToken(authData.getUsername());
+		String token = jwtUtil.generateToken(authData.getUsername(),userData.getRole());
 		return setTokenData(userData,token);
 		}
 	    throw new LoginException();
