@@ -13,12 +13,13 @@ import { AngularMaterialModule } from '../AngularMaterialModule';
 import { MatNativeDateModule } from '@angular/material/core';
 import { NgxMatTimepickerModule } from 'ngx-mat-timepicker';
 import { TicketBookingComponent } from '../ticket-booking/ticket-booking.component';
+import { AuthGuard } from '../auth/AuthGuard';
 
 const routes: Routes = [
-  {path:'', component: AdminComponent},
-  {path:'flight',component: FlightComponent},
-  {path:'register/flight' ,component: RegisterFlightComponent},
-  {path:'flight/schedule' ,component: FlightScheduleComponent}
+  {path:'', component: AdminComponent,canActivate: [AuthGuard]},
+  {path:'flight',component: FlightComponent,canActivate: [AuthGuard]},
+  {path:'register/flight' ,component: RegisterFlightComponent,canActivate: [AuthGuard]},
+  {path:'flight/schedule' ,component: FlightScheduleComponent,canActivate: [AuthGuard]}
 ]
 @NgModule({
   declarations: [

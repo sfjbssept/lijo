@@ -11,6 +11,7 @@ export class Passenger{
     phone: number;
     email:string;
     id: number;
+    userType: string;
     constructor(){
       this.passportNo = undefined;
       this.address =undefined;
@@ -21,5 +22,6 @@ export class Passenger{
       this.name = undefined;
       this.phone = undefined;
       this.gender = 'Male';
+      this.userType = 'secondary';
     }
 }

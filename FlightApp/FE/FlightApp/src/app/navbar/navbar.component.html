@@ -10,7 +10,7 @@
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="collapse navbar-collapse  collapse w-100 order-1 order-md-0 dual-collapse2" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" routerLinkActive="flightFont" [routerLink]="['/flight']" aria-current="page" href="#" > <span >Flights</span> </a>
@@ -18,7 +18,7 @@
                 <li class="nav-item">
                   <a class="nav-link" routerLinkActive="flightFont" [routerLink]="['/pnr']" aria-current="page" href="#" > <span >Manage Booking</span> </a>
                 </li>
-                <li class="nav-item dropdown">
+                <li class="nav-item dropdown" *ngIf="isLoggedIn && isAdmin">
                     <a class="nav-link dropdown-toggle" routerLinkActive="flightFont" [routerLink]="['/admin']" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       Admin
                     </a>
@@ -31,7 +31,7 @@
                       <a class="dropdown-item" href="#">Something else here</a> -->
                     </div>
                   </li>
-                  <li class="nav-item dropdown">
+                  <li class="nav-item dropdown" *ngIf="isLoggedIn && !isAdmin">
                     <a class="nav-link dropdown-toggle" routerLinkActive="flightFont" [routerLink]="['/user']" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       User
                     </a>
@@ -44,6 +44,16 @@
                     <a class="nav-link disabled">Disabled</a>
                 </li> -->
             </ul>
+        </div>
+        <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item" *ngIf="isLoggedIn">
+              <a class="nav-link" (click)="logout()"  href="#">Logout</a>
+            </li>
+            <li class="nav-item" *ngIf="!isLoggedIn">
+              <a class="nav-link" [routerLink]="['/login']"  href="#">login</a>
+            </li>
+          </ul>
         </div>
     </div>
 </nav>

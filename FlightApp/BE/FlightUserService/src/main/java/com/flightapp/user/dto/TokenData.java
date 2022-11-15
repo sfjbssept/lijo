@@ -11,4 +11,5 @@ public class TokenData {
 	private String token;
 	private Date tokenExpirationDate;
 	private String gender;
+	private String role;
 }

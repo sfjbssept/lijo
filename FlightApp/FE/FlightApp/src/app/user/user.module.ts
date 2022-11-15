@@ -10,10 +10,11 @@ import { PassengerComponent } from './passenger/passenger.component';
 import { PassengerDataComponent } from './passenger-data/passenger-data.component';
 import { faStackOverflow } from '@fortawesome/free-brands-svg-icons';
 import { faCoffee, faFilm, faTrash, faPenToSquare } from '@fortawesome/free-solid-svg-icons';
+import { AuthGuard } from '../auth/AuthGuard';
 
 const routes: Routes = [
-  {path:'passenger' ,component:PassengerComponent},
-  {path:'passenger/data',component: PassengerDataComponent}
+  {path:'passenger' ,component:PassengerComponent,canActivate: [AuthGuard]},
+  {path:'passenger/data',component: PassengerDataComponent,canActivate: [AuthGuard]}
 ]
 
 @NgModule({
