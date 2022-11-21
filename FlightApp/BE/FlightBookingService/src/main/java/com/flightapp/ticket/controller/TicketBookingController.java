@@ -1,5 +1,7 @@
 package com.flightapp.ticket.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -33,6 +35,11 @@ public class TicketBookingController extends BaseController{
 	@GetMapping(value = "pnr/{pnrNumber}")
 	public ResponseEntity<?> getPnrData(@PathVariable String pnrNumber) {
 		PnrDataResponse pnrDataResponse=  bookingService.getPnrData(pnrNumber);
+		return buildPnrResponseMessage(HttpStatus.OK, pnrDataResponse);	
+	}
+	@GetMapping(value = "/history/{userId}")
+	public ResponseEntity<?> getPnrDataHistory(@PathVariable String userId) {
+		List<PnrDataResponse> pnrDataResponse=  bookingService.getBookingHistory(userId);
 		return buildPnrResponseMessage(HttpStatus.OK, pnrDataResponse);	
 	}
 
