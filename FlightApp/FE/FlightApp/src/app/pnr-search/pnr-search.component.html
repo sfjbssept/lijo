@@ -6,8 +6,8 @@
         {{successMessage}}
     </div>
     <br>
-    <div class="card shadow p-3 mb-5 bg-body rounded">
-        <div class="card-body-small">
+    <div class="card shadow p-3 mb-5 bg-body rounded" *ngIf="!pnrInput">
+        <div class="card-body-small" >
             <div class="row">
                 <div class="col">
                     <input type="text" placeholder="PNR" class="form-control" [(ngModel)]="pnr">
@@ -20,7 +20,7 @@
     </div>
     <div *ngIf="pnrData">
         <div class="row justify-content-center" *ngFor="let item of pnrData.bookingDetailDto.ticketDetail">
-            <div class="col-md-7">
+            <div class="col-md-10">
                 <div class="card shadow p-3 mb-5 bg-body rounded">
                     <div class="card-body-small">
                         <div class="row">

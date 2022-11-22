@@ -12,4 +12,5 @@ public class TokenData {
 	private Date tokenExpirationDate;
 	private String gender;
 	private String role;
+	private Integer userId;
 }

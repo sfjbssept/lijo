@@ -23,6 +23,9 @@ export class AuthService {
     this.tokenData = JSON.parse(localStorage.getItem('tokenData'));
     if (this.tokenData) {
       this._tokenExpirationDate = this.tokenData.tokenExpirationDate;
+    }else{
+      this.authSubject.next({'isLoggedIn':false,'role':''});
+      return false;
     }
     if ( this._tokenExpirationDate && new Date() > new Date(this._tokenExpirationDate)) {
       localStorage.clear();
@@ -37,12 +40,6 @@ export class AuthService {
      return this.tokenData.role;
     } else{
       return '';
-    }
-  }
-  handleAuthentication() {
-    this.tokenData = JSON.parse(localStorage.getItem('tokenData'));
-    if (this.tokenData) {
-      this.tokenDataSubject.next(this.tokenData);
     }
   }
 }

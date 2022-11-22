@@ -45,6 +45,7 @@ public class AuthServiceImpl implements AuthService{
 		}
 		tokenData.setTokenExpirationDate(jwtUtil.getExpirationDate(token));
 		tokenData.setRole(userData.getRole());
+		tokenData.setUserId(userData.getId());
 		return tokenData;
 	}
 

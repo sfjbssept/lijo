@@ -1,0 +1,13 @@
+<div class="container">
+        <h2 class="flightFont-white">Ticket Booking History</h2>
+        <mat-accordion class="example-headers-align" multi>
+            <mat-expansion-panel *ngFor="let booking of bookingData">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                    {{booking.bookingDetailDto.pnr}}
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <app-pnr-search [pnrInput]="booking.bookingDetailDto.pnr"></app-pnr-search>    
+            </mat-expansion-panel>
+          </mat-accordion>
+</div>

@@ -17,7 +17,7 @@ export class PassengerDataComponent implements OnInit {
   }
 
   getAllPassengers(){
-    this.userService.getAllPassengers(1).subscribe({
+    this.userService.getAllPassengers().subscribe({
       next: data => {
       this.passengers =data as Passenger[];
       },

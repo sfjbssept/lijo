@@ -13,4 +13,8 @@ export class BookingService {
   getTicketDetailsByPnrNumber(pnrNumber:string) {
     return this.httpCLient.get(this.rootURL+'/pnr/'+pnrNumber);
   }
+  getTicketDetailsByUserId() {
+    const userId = localStorage.getItem('userId');
+    return this.httpCLient.get(this.rootURL+'/user/history/'+userId);
+  }
 }

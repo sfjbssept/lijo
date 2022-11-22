@@ -25,7 +25,6 @@ export class AuthComponent implements OnInit {
   this.authService.login(this.form.value).subscribe({
     next:(data:any) => {
       this.setLocalStorage(data);
-      this.authService.handleAuthentication();
       this.authService.authSubject.next({'isLoggedIn':true,'role':this.authService.getRole()});
       this.route.navigate(['/flight']);
     },
@@ -39,5 +38,6 @@ export class AuthComponent implements OnInit {
   setLocalStorage(data: any) {
     localStorage.setItem('token',data.token);
     localStorage.setItem('tokenData',JSON.stringify(data))
+    localStorage.setItem('userId',data.userId);
   }
 }

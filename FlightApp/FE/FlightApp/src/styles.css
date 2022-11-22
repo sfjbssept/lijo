@@ -14,6 +14,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .flightFont{
     font-weight: bold !important; color: #eb8034 !important;
 }
+.flightFont-white{
+    font-weight: bold !important; color: #edebea !important;
+}
 .div-card{
     padding: 5%;
     padding-bottom: 10%;

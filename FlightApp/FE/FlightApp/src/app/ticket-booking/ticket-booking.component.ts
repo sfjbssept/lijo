@@ -71,7 +71,7 @@ export class TicketBookingComponent implements OnInit {
   //TODO Duplicatecode
   getAllPassengers(){
     //TODO
-    this.userService.getAllPassengers(1).subscribe({
+    this.userService.getAllPassengers().subscribe({
       next: data => {
       this.passengers =data as Passenger[];
       },

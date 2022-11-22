@@ -10,9 +10,12 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from './shared/shared.module';
 import { TicketBookingComponent } from './ticket-booking/ticket-booking.component';
-import { PnrSearchComponent } from './pnr-search/pnr-search.component';
 import { AuthComponent } from './auth/auth.component';
 import { AuthHttpInterceptor } from './auth/authHttpInterceptor';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatCardModule } from '@angular/material/card';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AngularMaterialModule } from './AngularMaterialModule';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +23,6 @@ import { AuthHttpInterceptor } from './auth/authHttpInterceptor';
     FlightSearchComponent,
     FlightComponent,
     TicketBookingComponent,
-    PnrSearchComponent,
     AuthComponent,
     AuthComponent
   ],
@@ -30,6 +32,10 @@ import { AuthHttpInterceptor } from './auth/authHttpInterceptor';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
+    MatNativeDateModule,
+    MatCardModule,
+    AngularMaterialModule,
+    BrowserAnimationsModule,
     SharedModule
   ],
   providers: [

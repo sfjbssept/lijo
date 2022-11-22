@@ -37,7 +37,7 @@ public class TicketBookingController extends BaseController{
 		PnrDataResponse pnrDataResponse=  bookingService.getPnrData(pnrNumber);
 		return buildPnrResponseMessage(HttpStatus.OK, pnrDataResponse);	
 	}
-	@GetMapping(value = "/history/{userId}")
+	@GetMapping(value = "/user/history/{userId}")
 	public ResponseEntity<?> getPnrDataHistory(@PathVariable String userId) {
 		List<PnrDataResponse> pnrDataResponse=  bookingService.getBookingHistory(userId);
 		return buildPnrResponseMessage(HttpStatus.OK, pnrDataResponse);	
