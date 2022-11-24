@@ -12,7 +12,7 @@ public interface FlightDataDto {
 	
 	 Timestamp getArrivalTime();
 	
-	 Integer getFlightDuration();
+	 String getFlightDuration();
 	
 	 String getGateNumber();
 	

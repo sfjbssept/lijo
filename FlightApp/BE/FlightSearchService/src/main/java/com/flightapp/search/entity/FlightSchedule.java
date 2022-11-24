@@ -39,7 +39,7 @@ public class FlightSchedule {
 	private Timestamp arrivalTime;
 	
 	@Column(name = "duration")
-	private Float flightDuration;
+	private String flightDuration;
 	
 	@Column(name = "gate_no")
 	private String gateNumber;

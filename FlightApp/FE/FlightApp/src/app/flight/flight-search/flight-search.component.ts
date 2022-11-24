@@ -16,8 +16,8 @@ export class FlightSearchComponent implements OnInit {
   flightSchedules!: FlightSchedule[];
   errorMessage ="";
   successMessage ="";
-  source: any ='GOA';
-  destination: any = 'LONDON' ;
+  source: any ='';
+  destination: any = '' ;
   depDate: any = moment().format("MM/DD/yyyy");
   depDate1 = new FormControl((new Date()).toISOString());
   constructor(public flightService : FlightService ,private router: Router ) { }
