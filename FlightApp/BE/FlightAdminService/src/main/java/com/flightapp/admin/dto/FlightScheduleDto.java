@@ -15,7 +15,7 @@ public class FlightScheduleDto {
 	
 	private Timestamp arrivalTime;
 	
-	private Integer flightDuration;
+	private String flightDuration;
 	
 	private String gateNumber;
 	

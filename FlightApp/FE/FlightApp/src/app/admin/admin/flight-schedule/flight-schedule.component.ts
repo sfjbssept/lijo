@@ -72,7 +72,7 @@ export class FlightScheduleComponent implements OnInit {
     //   this.internationalService = this.flight.internationalService==='1'?true:false;
     // this.domesticService =this.flight.domesticService==='1'?true:false;
     }else{
-      localStorage.clear();
+      localStorage.setItem('selectedFlight',null);
       this.flightSchedule = new FlightSchedule();
       this.internationalService = true;
       this.domesticService = true;
@@ -149,7 +149,8 @@ export class FlightScheduleComponent implements OnInit {
       let date2 = moment(this.flightSchedule.arrivalTime); 
       let HOUR = Math.abs(date1.diff(date2, 'hours'));
       let minutes = Math.abs(date1.diff(date2, 'minutes'))%60;
-      this.flightSchedule.flightDuration =new Date(this.flightSchedule.arrivalTime).getTime()- new Date(this.flightSchedule.departureTime).getTime();
+    //  this.flightSchedule.flightDuration =new Date(this.flightSchedule.arrivalTime).getTime()- new Date(this.flightSchedule.departureTime).getTime();
+      this.flightSchedule.flightDuration = HOUR+':h '+minutes+' :m';
     }
   }
 }

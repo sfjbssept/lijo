@@ -47,7 +47,7 @@ export class RegisterFlightComponent implements OnInit {
       this.internationalService = this.flight.internationalService==='1'?true:false;
     this.domesticService =this.flight.domesticService==='1'?true:false;
     }else{
-      localStorage.clear();
+      localStorage.setItem('selectedFlight',null);
       this.flight = new Flight();
       this.internationalService = true;
       this.domesticService = true;
@@ -64,7 +64,7 @@ export class RegisterFlightComponent implements OnInit {
       next: (data:any) => {
         this.successMessage = data.message;
         this.form.reset();
-        localStorage.clear();
+        localStorage.setItem('selectedFlight',null);
         console.log(data);
     },
     error: error => {

@@ -31,16 +31,22 @@ public class TicketBookingController extends BaseController{
 		return buildResponseMessage(HttpStatus.OK, bookingResponse);
 		
 	}
+	@GetMapping(value =  "user/{ticketId}")
+	public ResponseEntity<?> bookTicket(@PathVariable Integer ticketId) {
+		Boolean isCancelled =  bookingService.cancelTicket(ticketId);
+		return buildResponseMessage(HttpStatus.OK, isCancelled);
+		
+	}
 	
 	@GetMapping(value = "pnr/{pnrNumber}")
 	public ResponseEntity<?> getPnrData(@PathVariable String pnrNumber) {
 		PnrDataResponse pnrDataResponse=  bookingService.getPnrData(pnrNumber);
-		return buildPnrResponseMessage(HttpStatus.OK, pnrDataResponse);	
+		return buildResponseMessage(HttpStatus.OK, pnrDataResponse);	
 	}
 	@GetMapping(value = "/user/history/{userId}")
 	public ResponseEntity<?> getPnrDataHistory(@PathVariable String userId) {
 		List<PnrDataResponse> pnrDataResponse=  bookingService.getBookingHistory(userId);
-		return buildPnrResponseMessage(HttpStatus.OK, pnrDataResponse);	
+		return buildResponseMessage(HttpStatus.OK, pnrDataResponse);	
 	}
 
 }

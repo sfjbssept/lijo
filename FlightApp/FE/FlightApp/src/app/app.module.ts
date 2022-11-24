@@ -16,6 +16,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatCardModule } from '@angular/material/card';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './AngularMaterialModule';
+import { ModalPopupComponent } from './modal-popup/modal-popup.component';
 @NgModule({
   declarations: [
     AppComponent,

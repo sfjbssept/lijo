@@ -60,7 +60,7 @@ export class TicketBookingComponent implements OnInit {
       passengerId:[''],
       mealType: ['', Validators.required],
       flightClass: ['', Validators.required],
-      status:['active'],
+      status:['Booked'],
       ticketCost:[0]
     });
     this.ticketDetails.push(ticketDetail);

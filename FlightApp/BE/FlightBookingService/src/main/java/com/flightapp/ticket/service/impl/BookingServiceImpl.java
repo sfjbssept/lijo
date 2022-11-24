@@ -8,7 +8,6 @@ import java.util.Optional;
 import java.util.Set;
 
 import org.apache.commons.lang.RandomStringUtils;
-import org.aspectj.weaver.NewConstructorTypeMunger;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +19,7 @@ import com.flightapp.ticket.dto.PassengerDto;
 import com.flightapp.ticket.dto.PnrDataResponse;
 import com.flightapp.ticket.entity.BookingDetail;
 import com.flightapp.ticket.entity.Passenger;
+import com.flightapp.ticket.entity.TicketDetail;
 import com.flightapp.ticket.exception.ResourceNotFoundException;
 import com.flightapp.ticket.feign.FlightClient;
 import com.flightapp.ticket.feign.UserClient;
@@ -131,5 +131,15 @@ public class BookingServiceImpl implements BookingService{
 	
 		
 		return pnrDataList;
+	}
+
+	@Override
+	public Boolean cancelTicket(Integer ticketId) {
+		Optional<TicketDetail> ticketDetail=  ticketDetailRepo.findById(ticketId);
+		if(ticketDetail.isPresent()) {
+			ticketDetail.get().setStatus("Cancelled");
+		}
+		TicketDetail ticket = ticketDetailRepo.save(ticketDetail.get());
+		return true;
 	}
 }

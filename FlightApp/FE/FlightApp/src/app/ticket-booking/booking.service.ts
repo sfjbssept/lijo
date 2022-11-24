@@ -17,4 +17,7 @@ export class BookingService {
     const userId = localStorage.getItem('userId');
     return this.httpCLient.get(this.rootURL+'/user/history/'+userId);
   }
+  cancelTicket(ticketId: Number) {
+    return this.httpCLient.get(this.rootURL+'/user/'+ticketId);
+  }
 }

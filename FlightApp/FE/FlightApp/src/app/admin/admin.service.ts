@@ -22,6 +22,6 @@ export class AdminService {
     return this.httpClient.get(this.rootURL+"/admin/flight");
   }
   saveSchedule(value: FlightSchedule) {
-    return this.httpClient.post(this.rootURL+"/flight/schedule/add",value,{responseType:'json'});
+    return this.httpClient.post(this.rootURL+"/admin/flight/schedule/add",value,{responseType:'json'});
   }
 }

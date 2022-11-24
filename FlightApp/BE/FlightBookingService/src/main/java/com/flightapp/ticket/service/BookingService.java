@@ -13,4 +13,6 @@ public interface BookingService {
    
 	public List<PnrDataResponse>  getBookingHistory(String userId);
 
+	public Boolean cancelTicket(Integer ticketId);
+
 }

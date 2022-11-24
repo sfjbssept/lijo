@@ -21,7 +21,7 @@ import lombok.extern.slf4j.Slf4j;
 
 
 @RestController
-@RequestMapping(value = "/flight/schedule")
+@RequestMapping(value = "admin/flight/schedule")
 @Slf4j
 public class FlightScheduleController extends BaseController{
 

@@ -5,7 +5,7 @@ export class FlightSchedule {
      destination!: string;
      departureTime!:Date;
      arrivalTime!:Date;
-     flightDuration!: number;
+     flightDuration!: string;
      gateNumber!: string;
      economyClassCost: number;
      businessClassCost: number;
@@ -19,7 +19,7 @@ export class FlightSchedule {
           this.destination =undefined;
           this.gateNumber = undefined;
           this.economyClassCost =  undefined;
-          this.flightDuration = 0;
+          this.flightDuration = undefined;
           this.flightId = undefined;
      }
 }
