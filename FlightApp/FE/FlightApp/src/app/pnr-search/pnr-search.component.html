@@ -78,17 +78,17 @@
                             </div>
                         </div>
                         <div class="row justify-content-center" data-html2canvas-ignore="true">
-                            <div class="col-2 justify-content-start" *ngIf="item.status=='active'">
+                            <div class="col-2 justify-content-start" *ngIf=" item.status=='Booked'">
                                 <button class="btn btn-success">ACTIVE</button>
                             </div>
-                            <div class="col-2 justify-content-start" *ngIf="item.status!='active'">
+                            <div class="col-2 justify-content-start" *ngIf=" item.status!='Booked'">
                                 <button class="btn btn-warning">CANCELLED</button>
                             </div>
                             <div class="col-4"></div>
-                            <div class="col-3 justify-content-end" *ngIf="item.status=='active'">
+                            <div class="col-3 justify-content-end" *ngIf="item.status=='Booked'">
                                 <button class="btn btn-danger" (click)="cancelTicket(item.id,item.bookingDate)">Cancel</button>
                             </div>
-                            <div class="col-3 justify-content-end" *ngIf="item.status=='active'">
+                            <div class="col-3 justify-content-end" *ngIf="item.status=='Booked'">
                                 <button class="btn btn-info" (click)="downloadImage(pnr)">Download</button>
                             </div>
                             
